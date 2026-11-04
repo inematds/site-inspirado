@@ -1,11 +1,19 @@
 # site-inspirado
 
+[![site-inspirado](guia/assets/banner.jpg)](https://inematds.github.io/site-inspirado/guia/)
+
+**🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
+
+## O que é
+
+O site-inspirado é um kit com uma skill para o Claude Code que cria sites que não têm cara de "feitos por IA". Você entrega imagens de referência (do Pinterest, do convite já impresso, da foto da loja) e a IA faz perguntas e pesquisa antes de gerar qualquer coisa. Depois ela mede o estilo dessas imagens, gera as imagens do site no mesmo estilo pelo Codex e monta a página com transições. No fim, um teste automático confere se o botão principal aparece e se a página funciona no celular. Para usar, você precisa do Claude Code, do Codex logado na sua assinatura, de Python e de Node.
+
 **Site que não tem cara de "feito por IA".** Você entrega 2 a 5 imagens de referência (Pinterest, o
 convite que já imprimiu, a foto da loja). A IA pergunta e pesquisa antes de gerar. Todas as imagens
 saem no mesmo estilo das referências, a página ganha transições em código, e um portão confere se o
 visitante ainda acha o botão antes de publicar.
 
-[Guia completo](https://inematds.github.io/site-inspirado/guia/) · English: [README.en.md](README.en.md) · Español: [README.es.md](README.es.md)
+[Guia completo](https://inematds.github.io/site-inspirado/guia/)
 
 Pilotos no ar:
 - **Evento** (visual, casamento fictício em aquarela): https://inematds.github.io/site-inspirado/pilotos/evento/

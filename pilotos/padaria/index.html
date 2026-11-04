@@ -95,6 +95,8 @@
   @media (max-width:760px){
     .barra{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:40}
     .barra .btn{flex:1;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+    .barra{transition:opacity .25s,transform .25s}
+    .barra.fora{opacity:0;transform:translateY(20px);pointer-events:none}
     footer{padding-bottom:96px!important}
   }
   footer{padding:40px 0;text-align:center;font-size:14px;color:var(--creme2);border-top:1px solid var(--linha)}
@@ -190,5 +192,13 @@
 </footer>
 
 <script src="../../skill/site-inspirado/runtime/movimento.js"></script>
+<script>
+  // a barra fixa só aparece quando o botão do topo sai da tela (nunca dois botões iguais à vista)
+  (function(){
+    var topo=document.querySelector('.hero [data-cta]'), barra=document.querySelector('.barra');
+    if(!topo||!barra||!('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function(e){ barra.classList.toggle('fora', e[0].isIntersecting); }).observe(topo);
+  })();
+</script>
 </body>
 </html>
