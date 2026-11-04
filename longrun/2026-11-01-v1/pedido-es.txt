@@ -1,13 +1,4 @@
-Translate this HTML page from Brazilian Portuguese to Latin American Spanish. Output ONLY the full translated HTML document, starting with <!DOCTYPE html>, no commentary, no code fences.
-Rules:
-- Keep ALL HTML structure, CSS, JS, ids, anchors (#guia etc.), class names, URLs, commands, flags, file names (estilo.py, imagens.py, portao.js, BRIEF.md, plano.json, refs/, data-cta, data-revela values like sobe/surge/lado/zoom/cortina, --tipo negocio/visual), numbers and proper names exactly.
-- The script output lines inside <pre> that show tool output in Portuguese ("CTA na 1ª tela: sim", "PASSA", "NÃO PASSA: CTA fora da primeira tela") must stay in Portuguese because the tool prints them that way.
-- Set <html lang="es">. Image paths: assets/banner.jpg -> ../assets/banner-es.jpg ; assets/banner-grade.jpg -> ../assets/banner-grade-es.jpg ; other assets/x -> ../assets/x . Links ../pilotos/ -> ../../pilotos/ .
-- Language selector must become: <span class="lang"><a href="../">PT</a><a class="on" href="./">ES</a><a href="../en/">EN</a></span>
-- Translate title, meta description, nav, headings, text, alt, aria-label, title attributes, captions, footer, HTML comments, and the example prompt in step 3.
-- Keep the hreflang <link> tags unchanged.
-
-<!DOCTYPE html>
+Translate this HTML page from Brazilian Portuguese to Latin American Spanish. Output ONLY the full translated HTML document, starting with <!DOCTYPE html>
 <!-- guia do site-inspirado (gerado a partir do template projetos-landing-guia).
      TRILINGUE: este arquivo e a versao PT (guia/index.html). As versoes guia/en/index.html e
      guia/es/index.html sao copias traduzidas: lang="en"/"es", seletor com a.on no idioma,
@@ -112,6 +103,7 @@ Rules:
   .phase .d span{color:var(--mut);font-size:.92rem}
   footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
   .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+  nav .brand,nav .links a{white-space:nowrap}
 </style>
 </head>
 <body>
@@ -126,7 +118,6 @@ Rules:
   </span>
   <div class="links">
     <a class="sec" href="#oque">O que é</a>
-    <a class="sec" href="#fluxo">Como funciona</a>
     <a class="sec" href="#guia">Guia de uso</a>
     <a class="sec" href="#exemplos">Exemplos</a>
     <a class="sec" href="#medida">Visual × conversão</a>
@@ -171,8 +162,8 @@ Rules:
 
 <section id="fluxo"><div class="wrap">
   <span class="chip">Como funciona</span>
-  <h2>Seis passos, um portão em cada</h2>
-  <p class="sub">Nenhum passo começa sem o anterior aprovado. Os nomes de arquivo são os que o kit usa.</p>
+  <h2>Seis etapas, uma conferência em cada</h2>
+  <p class="sub">Nenhuma etapa começa sem a anterior aprovada. O guia abaixo tem 8 passos: instalar, estas 6 etapas (passos 2 a 7) e publicar. O "portão" é o teste automático do fim.</p>
   <div class="flow">
     <span>refs/</span><span class="arr">→</span>
     <span>BRIEF.md</span><span class="arr">→</span>
@@ -188,7 +179,7 @@ Rules:
   <h2>O que precisa estar instalado</h2>
   <p class="sub">Tudo roda na sua máquina. As imagens saem pelo Codex na sua assinatura, sem chave de API.</p>
   <div class="grid g3">
-    <div class="card"><h3>Codex CLI logado</h3><p>Gera as imagens com <code>image_gen</code>, anexando as referências.</p><pre><span class="c"># confira</span>
+    <div class="card"><h3>Codex CLI logado</h3><p>Gera as imagens com o <code>image_gen</code> (o gerador de imagem do Codex), anexando as referências. O script roda o Codex sem pedir confirmação a cada imagem (<code>--dangerously-bypass-approvals-and-sandbox</code>): use numa pasta só do site.</p><pre><span class="c"># confira</span>
 <span class="k">codex login status</span></pre></div>
     <div class="card"><h3>Python 3 + Pillow</h3><p>Mede a paleta e monta a folha de contato.</p><pre><span class="k">python3 -c</span> <span class="s">"import PIL"</span></pre></div>
     <div class="card"><h3>Node + Playwright</h3><p>Só o portão usa (navegador sem janela).</p><pre><span class="k">cd skill/site-inspirado/scripts</span>
@@ -199,13 +190,13 @@ Rules:
 <section id="guia"><div class="wrap">
   <span class="chip">Guia de uso · passo a passo</span>
   <h2>Do zero ao site no ar</h2>
-  <p class="sub"><code>T</code> é a pasta do seu site (uma por site). <code>S</code> é a pasta da skill.</p>
+  <p class="sub"><code>T</code> é a pasta do seu site (uma por site). <code>S</code> é a pasta da skill. Os passos 3 e 6 você faz conversando com o Claude Code; os outros são comandos no terminal.</p>
 
   <div class="step"><div class="b">1</div><div>
     <h3>Instale a skill</h3>
-    <p>Clone o repositório e ligue a skill ao Claude Code.</p>
+    <p>Clone o repositório e ligue a skill ao Claude Code. <code>S</code> e <code>T</code> só valem no terminal em que você as criou: num terminal novo, rode a terceira linha de novo.</p>
 <pre><span class="k">git clone https://github.com/inematds/site-inspirado</span>
-<span class="k">ln -s "$PWD/site-inspirado/skill/site-inspirado" ~/.claude/skills/site-inspirado</span>
+<span class="k">mkdir -p ~/.claude/skills && ln -s "$PWD/site-inspirado/skill/site-inspirado" ~/.claude/skills/site-inspirado</span>
 <span class="k">S=~/.claude/skills/site-inspirado; T=~/meu-site; mkdir -p $T/refs</span></pre>
   </div></div>
 
@@ -216,7 +207,7 @@ Rules:
 
   <div class="step"><div class="b">3</div><div>
     <h3>Deixe a IA perguntar primeiro</h3>
-    <p>No Claude Code, abra a skill e diga a frase que muda o resultado. As perguntas por tipo de site estão em <code>referencias/perguntas.md</code>; as respostas vão para <code>$T/BRIEF.md</code>, junto com o tipo: <code>negocio</code> ou <code>visual</code>.</p>
+    <p>No Claude Code, abra a skill e diga a frase que muda o resultado. As perguntas por tipo de site estão em <code>referencias/perguntas.md</code>; as respostas vão para <code>$T/BRIEF.md</code>, junto com o tipo: <code>negocio</code> (o site existe para uma ação: encomendar, agendar) ou <code>visual</code> (evento, portfólio: pode ter mais movimento).</p>
 <pre><span class="k">/site-inspirado</span> <span class="s">"Quero o site da minha padaria. Antes de gerar nada, me pergunte tudo o que precisa e pesquise o que um site deste tipo costuma ter."</span></pre>
   </div></div>
 
@@ -229,18 +220,20 @@ Rules:
 
   <div class="step"><div class="b">5</div><div>
     <h3>Gere as imagens no mesmo estilo</h3>
-    <p>Escreva <code>$T/plano.json</code> (uma linha por imagem: <code>nome</code>, <code>prompt</code> do assunto, <code>largura</code>, <code>altura</code>). Cada imagem leva as referências e a primeira imagem gerada como âncora. Depois, abra a <code>folha.jpg</code> e refaça o que destoar.</p>
-<pre><span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs</span>
-<span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs --so festa</span>  <span class="c"># refaz uma</span></pre>
+    <p>Escreva <code>$T/plano.json</code> (uma linha por imagem: <code>nome</code>, <code>prompt</code> do assunto, <code>largura</code>, <code>altura</code>). Cada imagem leva as referências e a primeira imagem gerada como modelo (a "âncora"), para a série sair com a mesma mão. No fim sai a <code>folha.jpg</code>, uma folha com todas as imagens lado a lado: olhe e refaça o que destoar. Modelo pronto: <code>pilotos/padaria/plano.json</code>.</p>
+<pre><span class="c"># plano.json: [{"nome": "hero", "prompt": "pães esfriando na mesa", "largura": 1536, "altura": 1024}, ...]</span>
+<span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs</span>
+<span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs --so croissant</span>  <span class="c"># refaz uma</span></pre>
   </div></div>
 
   <div class="step"><div class="b">6</div><div>
     <h3>Monte a página com movimento</h3>
-    <p>Uma página desenhada para o assunto. O <code>movimento.js</code> dá as transições por atributo e para tudo quando o sistema pede "reduzir movimento". O botão principal leva <code>data-cta</code>.</p>
+    <p>Peça ao Claude Code: "monte a página com o BRIEF, o estilo e as imagens". Ele desenha uma página para o assunto e marca o botão principal (o CTA, a ação que você quer que o visitante faça) com <code>data-cta</code>. As transições vêm do <code>movimento.js</code>, por atributo: <code>data-revela</code> faz o bloco entrar ao aparecer na tela, <code>data-parallax</code> faz a imagem andar mais devagar que a rolagem, <code>data-intro</code> é uma abertura curta, <code>data-conta</code> conta um número e <code>data-contagem</code> mostra os dias até uma data. Tudo para quando o sistema pede "reduzir movimento". Copie o <code>movimento.js</code> para a pasta do site antes do portão:</p>
 <pre><span class="k">&lt;section data-revela="cortina"&gt;</span> <span class="c">… sobe | surge | lado | zoom | cortina</span>
 <span class="k">&lt;img data-parallax="0.12"&gt;</span>  <span class="k">&lt;b data-conta="36"&gt;</span>  <span class="k">&lt;div data-intro="900"&gt;</span>
 <span class="k">&lt;a data-cta href="#encomendar"&gt;</span>Encomendar<span class="k">&lt;/a&gt;</span>
-<span class="k">&lt;script src="movimento.js"&gt;&lt;/script&gt;</span></pre>
+<span class="k">&lt;script src="movimento.js"&gt;&lt;/script&gt;</span>
+<span class="k">cp $S/runtime/movimento.js $T/</span></pre>
   </div></div>
 
   <div class="step"><div class="b">7</div><div>
@@ -254,8 +247,10 @@ Rules:
 
   <div class="step"><div class="b">8</div><div>
     <h3>Publique</h3>
-    <p>Copie o <code>movimento.js</code> para a pasta do site e publique como site estático (GitHub Pages, Vercel ou a hospedagem do cliente).</p>
-<pre><span class="k">cp $S/runtime/movimento.js $T/ && cd $T && git init && git add -A && git commit -m</span> <span class="s">"site"</span></pre>
+    <p>A pasta <code>$T</code> já é um site estático completo. Suba para o GitHub e ligue o Pages (ou use a Vercel ou a hospedagem do cliente).</p>
+<pre><span class="k">cd $T && git init -b main && git add -A && git commit -m</span> <span class="s">"site"</span>
+<span class="k">gh repo create meu-site --public --source=. --push</span>
+<span class="k">gh api -X POST repos/&lt;usuario&gt;/meu-site/pages -f "source[branch]=main" -f "source[path]=/"</span></pre>
   </div></div>
 </div></section>
 
