@@ -184,7 +184,7 @@ Translate this HTML page from Brazilian Portuguese to Latin American Spanish. Ou
 <span class="k">codex login status</span>       <span class="c"># confere</span></pre></div>
     <div class="card"><h3>Python 3 + Pillow</h3><p>Mede a paleta e monta a folha de contato.</p><pre><span class="k">python3 -m pip install --user pillow</span>
 <span class="k">python3 -c</span> <span class="s">"import PIL"</span>  <span class="c"># confere</span></pre></div>
-    <div class="card"><h3>Node 18+ e GitHub CLI</h3><p>O Node roda o portão (que abre a página num navegador sem janela, instalado no passo 1). O <code>gh</code> publica no passo 8.</p><pre><span class="k">node -v</span>             <span class="c"># 18 ou mais</span>
+    <div class="card"><h3>Node 18+ e GitHub CLI</h3><p>Instale o Node primeiro (o <code>npm</code> do Codex vem com ele) e o git. O Node roda o portão (que abre a página num navegador sem janela, instalado no passo 1). O <code>gh</code> publica no passo 8.</p><pre><span class="k">node -v</span>             <span class="c"># 18 ou mais</span>
 <span class="k">gh auth login</span>      <span class="c"># gh: cli.github.com</span></pre></div>
   </div>
 </div></section>
@@ -196,9 +196,9 @@ Translate this HTML page from Brazilian Portuguese to Latin American Spanish. Ou
 
   <div class="step"><div class="b">1</div><div>
     <h3>Instale a skill</h3>
-    <p>Clone o repositório e ligue a skill ao Claude Code. <code>S</code> e <code>T</code> só valem no terminal em que você as criou: num terminal novo, rode a terceira linha de novo. Rode as linhas na pasta onde quer guardar o kit (o <code>ln -s</code> usa a pasta atual).</p>
+    <p>Clone o repositório e ligue a skill ao Claude Code. <code>$T</code> é a pasta <code>meu-site</code> dentro da sua pasta pessoal: as referências vão em <code>meu-site/refs</code>. <code>S</code> e <code>T</code> só valem no terminal em que você as criou: num terminal novo, rode a terceira linha de novo. Rode as linhas na pasta onde quer guardar o kit (o <code>ln -s</code> usa a pasta atual).</p>
 <pre><span class="k">git clone https://github.com/inematds/site-inspirado</span>
-<span class="k">mkdir -p ~/.claude/skills && ln -s "$PWD/site-inspirado/skill/site-inspirado" ~/.claude/skills/site-inspirado</span>
+<span class="k">mkdir -p ~/.claude/skills && ln -sfn "$PWD/site-inspirado/skill/site-inspirado" ~/.claude/skills/site-inspirado</span>
 <span class="k">S=~/.claude/skills/site-inspirado; T=~/meu-site; mkdir -p $T/refs</span>
 <span class="k">cd $S/scripts && npm install && npx playwright install chromium && cd -</span>  <span class="c"># navegador do portão</span></pre>
   </div></div>
@@ -210,20 +210,21 @@ Translate this HTML page from Brazilian Portuguese to Latin American Spanish. Ou
 
   <div class="step"><div class="b">3</div><div>
     <h3>Deixe a IA perguntar primeiro</h3>
-    <p>No Claude Code, abra a skill e diga a frase que muda o resultado. As perguntas por tipo de site estão em <code>referencias/perguntas.md</code>; as respostas vão para <code>$T/BRIEF.md</code>, junto com o tipo: <code>negocio</code> (o site existe para uma ação: encomendar, agendar) ou <code>visual</code> (evento, portfólio: pode ter mais movimento).</p>
-<pre><span class="k">/site-inspirado</span> <span class="s">"Quero o site da minha padaria. Antes de gerar nada, me pergunte tudo o que precisa e pesquise o que um site deste tipo costuma ter."</span></pre>
+    <p>Abra o Claude Code dentro da pasta do site (assim o BRIEF, o estilo e a página ficam todos em <code>$T</code>) e diga a frase que muda o resultado. As perguntas por tipo de site estão em <code>referencias/perguntas.md</code>; as respostas vão para <code>$T/BRIEF.md</code>, junto com o tipo: <code>negocio</code> (o site existe para uma ação: encomendar, agendar) ou <code>visual</code> (evento, portfólio: pode ter mais movimento).</p>
+<pre><span class="k">cd $T && claude</span>   <span class="c"># abra o Claude Code DENTRO da pasta do site</span>
+<span class="k">/site-inspirado</span> <span class="s">"Quero o site da minha padaria. Antes de gerar nada, me pergunte tudo o que precisa e pesquise o que um site deste tipo costuma ter."</span></pre>
   </div></div>
 
   <div class="step"><div class="b">4</div><div>
     <h3>Meça o estilo</h3>
-    <p>O script mede a paleta das referências e sugere fundo, texto e destaque com o contraste calculado. O prompt de estilo descreve técnica, luz e cores.</p>
+    <p>O script mede a paleta das referências e sugere fundo, texto e destaque com o contraste calculado. O prompt de estilo descreve técnica, luz e cores, em inglês: peça ao Claude Code para escrevê-lo olhando suas referências. O número com ":1" é o contraste entre texto e fundo (abaixo de 4,5:1 fica difícil de ler).</p>
 <pre><span class="k">python3 $S/scripts/estilo.py $T/refs $T/estilo.json --prompt</span> <span class="s">"honest food photography, warm window light, dark walnut, terracotta"</span>
 <span class="c"># estilo.json: 12 cores · fundo #110a04 · tinta #ebdbce (14.55:1) · acento #b07042</span></pre>
   </div></div>
 
   <div class="step"><div class="b">5</div><div>
     <h3>Gere as imagens no mesmo estilo</h3>
-    <p>Escreva <code>$T/plano.json</code> (uma linha por imagem: <code>nome</code>, <code>prompt</code> do assunto, <code>largura</code>, <code>altura</code>). Cada imagem leva as referências e a primeira imagem gerada como modelo (a "âncora"), para a série sair com a mesma mão. No fim sai a <code>folha.jpg</code>, uma folha com todas as imagens lado a lado: olhe e refaça o que destoar. Não precisa escrever o JSON à mão: peça ao Claude Code "escreva o plano.json a partir do BRIEF" ou copie <code>pilotos/padaria/plano.json</code> e troque os textos. Cada imagem leva cerca de 1 minuto e usa a cota da sua assinatura do Codex.</p>
+    <p>Escreva <code>$T/plano.json</code> (uma linha por imagem: <code>nome</code>, <code>prompt</code> do assunto, <code>largura</code>, <code>altura</code>). Cada imagem leva as 2 primeiras referências (em ordem alfabética: dê nomes como <code>1-convite.jpg</code> às que mais importam) e a primeira imagem gerada como modelo (a "âncora"), para a série sair com a mesma mão. No fim sai a <code>folha.jpg</code>, uma folha com todas as imagens lado a lado: olhe e refaça o que destoar. Não precisa escrever o JSON à mão: peça ao Claude Code "escreva o plano.json a partir do BRIEF" ou copie <code>pilotos/padaria/plano.json</code> e troque os textos. Cada imagem leva cerca de 1 minuto e usa a cota da sua assinatura do Codex.</p>
 <pre><span class="c"># plano.json: [{"nome": "hero", "prompt": "pães esfriando na mesa", "largura": 1536, "altura": 1024}, ...]</span>
 <span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs</span>
 <span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs --so croissant</span>  <span class="c"># refaz uma</span></pre>
@@ -253,7 +254,8 @@ Translate this HTML page from Brazilian Portuguese to Latin American Spanish. Ou
   <div class="step"><div class="b">8</div><div>
     <h3>Publique</h3>
     <p>A pasta <code>$T</code> já é um site estático completo. Suba para o GitHub e ligue o GitHub Pages, a hospedagem grátis de páginas do GitHub (ou use a Vercel ou a hospedagem do cliente). Troque <code>SEU_USUARIO</code> pelo seu usuário do GitHub.</p>
-<pre><span class="k">cd $T && git init -b main && git add -A && git commit -m</span> <span class="s">"site"</span>
+<pre><span class="k">git config --global user.name</span> <span class="s">"Seu Nome"</span>; <span class="k">git config --global user.email</span> <span class="s">"voce@email.com"</span>  <span class="c"># só na 1ª vez</span>
+<span class="k">cd $T && git init -b main && git add -A && git commit -m</span> <span class="s">"site"</span>
 <span class="k">gh repo create meu-site --public --source=. --push</span>
 <span class="k">gh api -X POST repos/SEU_USUARIO/meu-site/pages -f "source[branch]=main" -f "source[path]=/"</span></pre>
   </div></div>
