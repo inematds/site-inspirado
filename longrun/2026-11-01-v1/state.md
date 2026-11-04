@@ -1,21 +1,18 @@
-# Estado — site-inspirado v1 (atualizado 04/11/2026, retomada 3)
+# Estado — site-inspirado v1 (atualizado 04/11/2026 ~21h, retomada 3)
 
-## Feito
-- Kit: estilo.py, imagens.py (motor Codex por padrão), portao.js (serve da raiz do repo), movimento.js, SKILL.md, perguntas.md, visual-x-conversao.md.
-- tests/ruim.html + tests/rodar.sh (portão barra a página ruim pelos 2 motivos: testado).
-- Pilotos: refs, estilo.json, plano.json, BRIEF.md, index.html (evento visual, padaria negócio).
-- README PT/EN/ES, CLAUDE.md, FALHAS.md, capa/capa.png, guia/assets/hero.png, banner-grade.jpg (PT).
-- guia/index.html PT montado do template.
+## Feito (goal.md)
+1. estilo.py → JSON com 12 cores + prompt_estilo ✔
+2. portão padaria (negocio) → PASSA ✔
+3. portão evento (visual) → PASSA ✔
+4. regressão tests/ruim.html → barrada pelos 2 motivos ✔
+5. bash tests/rodar.sh → OK ✔ (c3bcebe)
+6. Pages: guia/, guia/en/, guia/es/, pilotos/padaria/, pilotos/evento/ → 200 ✔
+7. grep da fonte → nada fora do goal.md ✔
+8. Portal: 91cec5c (+ inemabuscas d822bd2, PRO 8c09678), EN/ES dbb07cb ✔ · revisor registrado (4 rodadas: 6, 7, 7, 6) — 5ª aprovada (8)
 
-## Em andamento
-- Imagens dos pilotos pelo Codex (logs gera-evento.log, gera-padaria.log).
-- Banners PT live + EN/ES (banner-*.log), tradução do guia EN/ES (traduz-*.log).
+## Imagens
+Todas pelo Codex (evento 8, padaria 6, capa, 6 banners). inemaimg proibido (travou 3×).
 
 ## Falta
-- Olhar as folhas; ex1/ex2 do guia = fotos do portão dos pilotos.
-- bash tests/rodar.sh → OK; 1º commit; gh repo create inematds/site-inspirado; Pages (workflow, push SSH).
-- Revisor independente + revisor-nota.py; atualiza-portal; memória; pendencias.md; aviso v3.
-
-## Travas
-- NUNCA chamar o inemaimg (porta 8000) — travou a máquina 3× (ordem do Nei 04/11 19:40).
-- Sem citar a fonte. Pilotos sem visual INEMA.
+- (feito) 5º revisor aprovou com 8; ajustes finais aplicados.
+- pendencias.md (linha do site-inspirado), aviso v3.

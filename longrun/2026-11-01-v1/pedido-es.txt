@@ -179,7 +179,7 @@ Translate this HTML page from Brazilian Portuguese to Latin American Spanish. Ou
   <h2>O que precisa estar instalado</h2>
   <p class="sub">Funciona no Linux e no Mac (no Windows, use o WSL, o Linux dentro do Windows). Tudo roda na sua máquina. As imagens saem pelo Codex na sua assinatura, sem chave de API.</p>
   <div class="grid g3">
-    <div class="card"><h3>Codex CLI logado</h3><p>Gera as imagens com o <code>image_gen</code> (o gerador de imagem do Codex), anexando as referências. O script roda o Codex sem pedir confirmação a cada imagem (<code>--dangerously-bypass-approvals-and-sandbox</code>): use numa pasta só do site.</p><pre><span class="k">npm i -g @openai/codex</span>   <span class="c"># instala</span>
+    <div class="card"><h3>Codex CLI logado</h3><p>Gera as imagens com o <code>image_gen</code> (o gerador de imagem do Codex), anexando as referências. O script roda o Codex sem pedir confirmação a cada imagem (<code>--dangerously-bypass-approvals-and-sandbox</code>): use numa pasta só do site.</p><pre><span class="k">npm i -g @openai/codex</span>   <span class="c"># instala (erro EACCES: rode com sudo na frente)</span>
 <span class="k">codex login</span>              <span class="c"># entra com a conta do ChatGPT</span>
 <span class="k">codex login status</span>       <span class="c"># confere</span></pre></div>
     <div class="card"><h3>Python 3 + Pillow</h3><p>Mede a paleta e monta a folha de contato.</p><pre><span class="k">python3 -m pip install --user pillow</span>
@@ -187,7 +187,9 @@ Translate this HTML page from Brazilian Portuguese to Latin American Spanish. Ou
 <span class="k">sudo apt install python3-pil</span>   <span class="c"># Ubuntu/Debian</span>
 <span class="k">brew install pillow</span>            <span class="c"># Mac</span>
 <span class="k">python3 -c</span> <span class="s">"import PIL"</span>  <span class="c"># confere</span></pre></div>
-    <div class="card"><h3>Node 18+ e GitHub CLI</h3><p>Instale o Node primeiro (o <code>npm</code> do Codex vem com ele) e o git. O Node roda o portão (que abre a página num navegador sem janela, instalado no passo 1). O <code>gh</code> publica no passo 8.</p><pre><span class="k">node -v</span>             <span class="c"># 18 ou mais</span>
+    <div class="card"><h3>Node 18+ e GitHub CLI</h3><p>Instale o Node primeiro (o <code>npm</code> do Codex vem com ele) e o git. O Node roda o portão (que abre a página num navegador sem janela, instalado no passo 1). O <code>gh</code> publica no passo 8.</p><pre><span class="k">brew install node git gh</span>   <span class="c"># Mac (ou nodejs.org)</span>
+<span class="k">sudo apt install nodejs npm git gh</span>   <span class="c"># Ubuntu/Debian</span>
+<span class="k">node -v</span>             <span class="c"># 18 ou mais</span>
 <span class="k">gh auth login</span>      <span class="c"># gh: cli.github.com</span></pre></div>
   </div>
 </div></section>
@@ -214,7 +216,7 @@ Translate this HTML page from Brazilian Portuguese to Latin American Spanish. Ou
   <div class="step"><div class="b">3</div><div>
     <h3>Deixe a IA perguntar primeiro</h3>
     <p>Abra o Claude Code dentro da pasta do site (assim o BRIEF, o estilo e a página ficam todos em <code>$T</code>) e diga a frase que muda o resultado. As perguntas por tipo de site estão em <code>referencias/perguntas.md</code>; as respostas vão para <code>$T/BRIEF.md</code>, junto com o tipo: <code>negocio</code> (o site existe para uma ação: encomendar, agendar) ou <code>visual</code> (evento, portfólio: pode ter mais movimento).</p>
-    <p>Os passos 4, 5 e 7 são comandos de terminal: abra um segundo terminal (o primeiro fica com o Claude Code) e rode nele a linha <code>S=…; T=…</code> do passo 1 antes.</p>
+    <p>Os passos 4, 5 e 7, o <code>cp</code> do passo 6 e o passo 8 são comandos de terminal: abra um segundo terminal (o primeiro fica com o Claude Code) e rode nele a linha <code>S=…; T=…</code> do passo 1 antes.</p>
 <pre><span class="c"># no terminal</span>
 <span class="k">cd $T && claude</span></pre>
 <pre><span class="c"># dentro do Claude Code (digite, não é comando de terminal)</span>
@@ -259,7 +261,7 @@ Translate this HTML page from Brazilian Portuguese to Latin American Spanish. Ou
 
   <div class="step"><div class="b">8</div><div>
     <h3>Publique</h3>
-    <p>A pasta <code>$T</code> já é um site estático completo. Suba para o GitHub e ligue o GitHub Pages, a hospedagem grátis de páginas do GitHub (ou use a Vercel ou a hospedagem do cliente). Troque <code>SEU_USUARIO</code> pelo seu usuário do GitHub.</p>
+    <p>A pasta <code>$T</code> já é um site estático completo. Suba para o GitHub e ligue o GitHub Pages, a hospedagem grátis de páginas do GitHub (ou use a Vercel ou a hospedagem do cliente). Troque <code>SEU_USUARIO</code> pelo seu usuário do GitHub. O site abre em <code>https://SEU_USUARIO.github.io/meu-site/</code> alguns minutos depois.</p>
 <pre><span class="c"># não publique os dados do cliente nem os rascunhos:</span>
 <span class="k">printf</span> <span class="s">'BRIEF.md\nrefs/\nfotos/\nimg/.codex/\nimg/folha.jpg\n'</span> <span class="k">&gt; $T/.gitignore</span>
 <span class="k">git config --global user.name</span> <span class="s">"Seu Nome"</span>; <span class="k">git config --global user.email</span> <span class="s">"voce@email.com"</span>  <span class="c"># só na 1ª vez</span>
