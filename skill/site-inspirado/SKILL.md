@@ -17,7 +17,7 @@ O que separa um site comum de um site memorável não é o código, é o **proce
 referência visual → perguntas → pesquisa → imagens no mesmo estilo → página com movimento →
 **conferir se a pessoa ainda acha o botão**.
 
-`S=<pasta desta skill>` · `T=<pasta do site>` (uma por site, ex.: `~/projetos/output/site-inspirado/<slug>`).
+`S=<pasta desta skill>` · `T=<pasta do site>` (uma por site; use a que a pessoa indicar, ex.: `~/meu-site`; sem indicação, `~/projetos/output/site-inspirado/<slug>`). Trabalhe sempre dentro de `T`.
 
 > O site final NÃO usa o visual INEMA (preto e amarelo). O estilo vem das referências da pessoa.
 > O visual INEMA vale só para o guia do kit.
@@ -68,7 +68,7 @@ autorização da pessoa para aquele serviço. Sem ele, o movimento é feito em c
 
 ### 5. Página com movimento
 Uma página por site, desenhada para o assunto (nunca copie outro piloto). Use:
-- `<script src="$S/runtime/movimento.js">` (copie para `T/` ao publicar): `data-revela`
+- `cp $S/runtime/movimento.js T/` e `<script src="movimento.js">` (sempre dentro de `T`, antes do portão): `data-revela`
   (sobe/surge/lado/zoom/cortina), `data-parallax`, `data-intro` (véu ≤ 1,2 s), `data-conta`,
   `data-contagem`. Tudo para quando o sistema pede "reduzir movimento".
 - O botão principal leva `data-cta`. Em `negocio`, ele fica na primeira tela, sem animação de entrada,

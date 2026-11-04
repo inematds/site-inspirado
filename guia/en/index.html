@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!-- site-inspirado guide (generated from the projetos-landing-guia template).
      TRILINGUAL: this file is the PT version (guia/index.html). The guia/en/index.html and
-     guia/es/index.html versions are translated copies: lang="en"/"es", selector with a.on
-     for the current language, selector hrefs ../ and ../es/ (or ../en/), and images assets/ -> ../assets/. -->
+     guia/es/index.html versions are translated copies: lang="en"/"es", selector with a.on for the current language,
+     selector hrefs ../ and ../es/ (or ../en/), and images assets/ -> ../assets/. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>site-inspirado — your references become your website’s style</title>
-<meta name="description" content="A kit and skill for creating websites with their own character: references become a measured style, AI asks before generating, images share a consistent style through Codex, and a gate checks the button before publishing.">
+<title>site-inspirado — turn your references into your website’s style</title>
+<meta name="description" content="A toolkit and skill for creating websites with a distinctive look: references become a measured style, AI asks before generating, Codex creates images in a consistent style, and a gate checks the button before publishing.">
 <link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/site-inspirado/guia/">
 <link rel="alternate" hreflang="en" href="https://inematds.github.io/site-inspirado/guia/en/">
 <link rel="alternate" hreflang="es" href="https://inematds.github.io/site-inspirado/guia/es/">
@@ -120,7 +120,7 @@
     <a class="sec" href="#oque">What it is</a>
     <a class="sec" href="#guia">User guide</a>
     <a class="sec" href="#exemplos">Examples</a>
-    <a class="sec" href="#medida">Visual design × conversion</a>
+    <a class="sec" href="#medida">Visuals × conversion</a>
     <span class="lang"><a href="../">PT</a><a class="on" href="./">EN</a><a href="../es/">ES</a></span>
     <button class="tgl" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
     <a class="btn" href="https://github.com/inematds/site-inspirado" target="_blank" rel="noopener">GitHub</a>
@@ -131,39 +131,39 @@
   <div class="glow"></div>
   <div class="wrap">
     <div>
-      <span class="chip">Kit + skill · AI-powered websites</span>
+      <span class="chip">Toolkit + skill · AI websites</span>
       <h1>Your references become your website’s <span class="amb">style</span></h1>
-      <p class="lead">Gather 2 to 5 images you like. AI asks before generating, creates all images in the same style, builds the page with motion, and checks whether visitors can still find the button.</p>
+      <p class="lead">Collect 2 to 5 images you like. AI asks questions before generating, creates every image in the same style, builds a page with motion, and checks whether visitors can still find the button.</p>
       <div class="cta">
         <a class="btn" href="#guia">Start the guide</a>
         <a class="btn ghost" href="https://github.com/inematds/site-inspirado" target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </div>
-    <figure><img src="../assets/banner-en.jpg" alt="site-inspirado banner: printed references on a table becoming a web page"></figure>
+    <figure><img src="../assets/banner-en.jpg" alt="site-inspirado banner: printed references on a table become a web page"></figure>
   </div>
 </header>
 
 <section id="resumo" class="resumo"><div class="wrap">
   <span class="chip">In brief</span>
-  <p>site-inspirado is a kit with a skill for Claude Code that creates websites that do not look “AI-made.” You provide reference images (from Pinterest, a printed invitation, or a photo of your shop), and AI asks questions and does research before generating anything. Then it measures the style of those images, generates website images in the same style through Codex, and builds the page with transitions. Finally, an automated test checks that the main button is visible and that the page works on mobile. To use it, you need Claude Code, Codex signed in with your subscription, Python, and Node.</p>
+  <p>site-inspirado is a toolkit with a skill for Claude Code that creates websites that don’t look “AI-made.” You provide reference images (from Pinterest, a printed invitation, or a shop photo), and AI asks questions and researches before generating anything. Then it measures the images’ style, generates website images in that same style with Codex, and builds the page with transitions. Finally, an automated test checks whether the main button is visible and whether the page works on mobile. You need Claude Code, Codex signed in with your subscription, Python, and Node.</p>
 </div></section>
 
 <section id="oque"><div class="wrap">
   <span class="chip">What it is</span>
   <h2>The process is the differentiator, not the code</h2>
-  <p class="sub">Asking “make a beautiful website” gets you the same old result. Providing references, answering questions, and checking the result gives you a site with its own character.</p>
+  <p class="sub">Ask “make a beautiful website” and you’ll get the same old website. Provide references, answer questions, and check the result to get a website with its own character.</p>
   <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-en.jpg" alt="The six site-inspirado stages: references, questions, measured style, images in that style, motion, and a gate" loading="lazy" style="width:100%;display:block"></figure>
   <div class="grid g3">
-    <div class="card"><h3>🎯 Ask before generating</h3><p>A set of questions for each type of website (event, business, service, portfolio). Anything the person does not answer is researched or left out.</p></div>
+    <div class="card"><h3>🎯 Ask before generating</h3><p>A set of questions for each type of website (event, business, service, portfolio). Anything left unanswered is researched or left out.</p></div>
     <div class="card"><h3>🖌️ Measured style</h3><p><code>estilo.py</code> extracts the palette from the references and calculates contrast. Every image gets the same style prompt and the same references.</p></div>
-    <div class="card"><h3>✅ A gate before publishing</h3><p><code>portao.js</code> opens the page on desktop and mobile, and blocks sites that hide the button, break, or ignore “reduce motion.”</p></div>
+    <div class="card"><h3>✅ A gate before publishing</h3><p><code>portao.js</code> opens the page on desktop and mobile and blocks websites that hide the button, break, or ignore “reduce motion.”</p></div>
   </div>
 </div></section>
 
 <section id="fluxo"><div class="wrap">
   <span class="chip">How it works</span>
   <h2>Six stages, each with a check</h2>
-  <p class="sub">No stage begins until the previous one is approved. The guide below has 8 steps: install, these 6 stages (steps 2 to 7), and publish. The “gate” is the final automated test.</p>
+  <p class="sub">No stage starts until the previous one is approved. The guide below has 8 steps: install, these 6 stages (steps 2 to 7), and publish. The “gate” is the final automated test.</p>
   <div class="flow">
     <span>refs/</span><span class="arr">→</span>
     <span>BRIEF.md</span><span class="arr">→</span>
@@ -175,16 +175,19 @@
 </div></section>
 
 <section id="pre"><div class="wrap">
-  <span class="chip">Requirements</span>
+  <span class="chip">Prerequisites</span>
   <h2>What needs to be installed</h2>
-  <p class="sub">Everything runs on your machine. Images are generated by Codex through your subscription, with no API key.</p>
+  <p class="sub">Works on Linux and Mac (on Windows, use WSL, Linux inside Windows). Everything runs on your computer. Images are generated by Codex through your subscription, with no API key.</p>
   <div class="grid g3">
-    <div class="card"><h3>Codex CLI signed in</h3><p>Generates images with <code>image_gen</code> (Codex’s image generator), attaching the references. The script runs Codex without asking for confirmation for each image (<code>--dangerously-bypass-approvals-and-sandbox</code>): use it in a folder dedicated to the site.</p><pre><span class="k">npm i -g @openai/codex</span>   <span class="c"># installs</span>
+    <div class="card"><h3>Codex CLI, signed in</h3><p>Generates images with <code>image_gen</code> (Codex’s image generator), attaching the references. The script runs Codex without asking for confirmation for each image (<code>--dangerously-bypass-approvals-and-sandbox</code>): use it in a folder dedicated to the website.</p><pre><span class="k">npm i -g @openai/codex</span>   <span class="c"># install</span>
 <span class="k">codex login</span>              <span class="c"># sign in with your ChatGPT account</span>
 <span class="k">codex login status</span>       <span class="c"># check</span></pre></div>
     <div class="card"><h3>Python 3 + Pillow</h3><p>Measures the palette and creates the contact sheet.</p><pre><span class="k">python3 -m pip install --user pillow</span>
+<span class="c"># if you get "externally-managed-environment":</span>
+<span class="k">sudo apt install python3-pil</span>   <span class="c"># Ubuntu/Debian</span>
+<span class="k">brew install pillow</span>            <span class="c"># Mac</span>
 <span class="k">python3 -c</span> <span class="s">"import PIL"</span>  <span class="c"># check</span></pre></div>
-    <div class="card"><h3>Node 18+ and GitHub CLI</h3><p>Install Node first (Codex’s <code>npm</code> comes with it), along with Git. Node runs the gate (which opens the page in a headless browser installed in step 1). <code>gh</code> publishes in step 8.</p><pre><span class="k">node -v</span>             <span class="c"># 18 or later</span>
+    <div class="card"><h3>Node 18+ and GitHub CLI</h3><p>Install Node first (Codex’s <code>npm</code> comes with it) and Git. Node runs the gate (which opens the page in a headless browser installed in step 1). <code>gh</code> publishes in step 8.</p><pre><span class="k">node -v</span>             <span class="c"># 18 or later</span>
 <span class="k">gh auth login</span>      <span class="c"># gh: cli.github.com</span></pre></div>
   </div>
 </div></section>
@@ -192,47 +195,50 @@
 <section id="guia"><div class="wrap">
   <span class="chip">User guide · step by step</span>
   <h2>From scratch to a live website</h2>
-  <p class="sub"><code>T</code> is your website folder (one per site). <code>S</code> is the skill folder. You do steps 3 and 6 by chatting with Claude Code; the rest are terminal commands.</p>
+  <p class="sub"><code>T</code> is your website folder (one per website). <code>S</code> is the skill folder. You do steps 3 and 6 by chatting with Claude Code; the rest are terminal commands.</p>
 
   <div class="step"><div class="b">1</div><div>
     <h3>Install the skill</h3>
-    <p>Clone the repository and link the skill to Claude Code. <code>$T</code> is the <code>my-site</code> folder inside your home directory: put references in <code>my-site/refs</code>. <code>S</code> and <code>T</code> only apply in the terminal where you created them: in a new terminal, run the third line again. Run these lines in the folder where you want to keep the kit (<code>ln -s</code> uses the current folder).</p>
+    <p>Clone the repository and connect the skill to Claude Code. <code>$T</code> is the <code>my-site</code> folder inside your home folder: put references in <code>my-site/refs</code>. <code>S</code> and <code>T</code> only apply in the terminal where you created them: in a new terminal, run the third line again. Run these lines in the folder where you want to keep the toolkit (<code>ln -s</code> uses the current folder).</p>
 <pre><span class="k">git clone https://github.com/inematds/site-inspirado</span>
 <span class="k">mkdir -p ~/.claude/skills && ln -sfn "$PWD/site-inspirado/skill/site-inspirado" ~/.claude/skills/site-inspirado</span>
 <span class="k">S=~/.claude/skills/site-inspirado; T=~/my-site; mkdir -p $T/refs</span>
-<span class="k">cd $S/scripts && npm install && npx playwright install chromium && cd -</span>  <span class="c"># gate browser</span></pre>
+<span class="k">cd $S/scripts && npm install && npx playwright install --with-deps chromium && cd -</span>  <span class="c"># gate browser</span></pre>
   </div></div>
 
   <div class="step"><div class="b">2</div><div>
-    <h3>Gather your references</h3>
-    <p>Put 2 to 5 images in <code>$T/refs/</code>: things you already have (an invitation, logo, or shop photo) and inspiration (on Pinterest, search for “bakery website” or “watercolor wedding website”). An image showing what you do NOT want can help too.</p>
+    <h3>Collect references</h3>
+    <p>Put 2 to 5 images in <code>$T/refs/</code>: things you already have (an invitation, logo, or shop photo) and inspiration (on Pinterest, search “bakery website” or “watercolor wedding website”). An image showing what you DON’T want can also help.</p>
   </div></div>
 
   <div class="step"><div class="b">3</div><div>
     <h3>Let AI ask questions first</h3>
-    <p>Open Claude Code inside the website folder (so the BRIEF, style, and page all stay in <code>$T</code>) and use the phrase that changes the result. Questions for each type of website are in <code>referencias/perguntas.md</code>; answers go into <code>$T/BRIEF.md</code>, along with the type: <code>negocio</code> (the site exists to drive an action, such as ordering or booking) or <code>visual</code> (an event or portfolio site, where more motion is appropriate).</p>
-<pre><span class="k">cd $T && claude</span>   <span class="c"># open Claude Code INSIDE the website folder</span>
+    <p>Open Claude Code inside the website folder (so the brief, style, and page all stay in <code>$T</code>) and use the phrase that changes the outcome. Questions for each website type are in <code>referencias/perguntas.md</code>; answers go in <code>$T/BRIEF.md</code>, along with the type: <code>negocio</code> (the website exists to prompt an action: order, book) or <code>visual</code> (event, portfolio: can have more motion).</p>
+    <p>Steps 4, 5, and 7 are terminal commands: open a second terminal (leave the first one running Claude Code) and run the <code>S=…; T=…</code> line from step 1 there first.</p>
+<pre><span class="c"># in the terminal</span>
+<span class="k">cd $T && claude</span></pre>
+<pre><span class="c"># inside Claude Code (type this; it is not a terminal command)</span>
 <span class="k">/site-inspirado</span> <span class="s">"I want a website for my bakery. Before generating anything, ask me everything you need to know and research what this type of website usually includes."</span></pre>
   </div></div>
 
   <div class="step"><div class="b">4</div><div>
     <h3>Measure the style</h3>
-    <p>The script measures the references’ palette and suggests a background, text, and accent color, with calculated contrast. The style prompt describes the technique, light, and colors in English: ask Claude Code to write it by looking at your references. The number followed by “:1” is the contrast between text and background (below 4.5:1, it becomes hard to read).</p>
+    <p>The script measures the references’ palette and suggests a background, text, and accent using the calculated contrast. The style prompt describes technique, lighting, and colors in English: ask Claude Code to write it while looking at your references. The number followed by “:1” is the contrast between text and background (below 4.5:1, text becomes hard to read).</p>
 <pre><span class="k">python3 $S/scripts/estilo.py $T/refs $T/estilo.json --prompt</span> <span class="s">"honest food photography, warm window light, dark walnut, terracotta"</span>
-<span class="c"># estilo.json: 12 colors · background #110a04 · text #ebdbce (14.55:1) · accent #b07042</span></pre>
+<span class="c"># estilo.json: 12 colors · background #110a04 · ink #ebdbce (14.55:1) · accent #b07042</span></pre>
   </div></div>
 
   <div class="step"><div class="b">5</div><div>
     <h3>Generate images in the same style</h3>
-    <p>Write <code>$T/plano.json</code> (one line per image: <code>nome</code>, subject <code>prompt</code>, <code>largura</code>, <code>altura</code>). Each image uses the first 2 references (in alphabetical order: give the most important ones names like <code>1-invitation.jpg</code>) and the first image generated as a model (the “anchor”), so the series has a consistent look. At the end, <code>folha.jpg</code> is created, showing all images side by side: review it and redo anything that stands out. You do not need to write the JSON by hand: ask Claude Code to “write plano.json from the BRIEF,” or copy <code>pilotos/padaria/plano.json</code> and replace the text. Each image takes about 1 minute and uses your Codex subscription quota.</p>
+    <p>Write <code>$T/plano.json</code> (one line per image: <code>nome</code>, subject <code>prompt</code>, <code>largura</code>, <code>altura</code>). Each image uses the first 2 references (in alphabetical order: name the most important ones <code>1-invitation.jpg</code>) and the first generated image as a model (the “anchor”) to keep the series visually consistent. At the end, <code>folha.jpg</code> is created: a contact sheet showing all images side by side. Review it and regenerate anything that looks out of place. You don’t need to write the JSON by hand: ask Claude Code to “write plano.json from the BRIEF,” or copy <code>pilotos/padaria/plano.json</code> and replace the text. Each image takes about 1 minute and uses your Codex subscription quota.</p>
 <pre><span class="c"># plano.json: [{"nome": "hero", "prompt": "bread cooling on the table", "largura": 1536, "altura": 1024}, ...]</span>
 <span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs</span>
-<span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs --so croissant</span>  <span class="c"># redo one</span></pre>
+<span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs --so croissant</span>  <span class="c"># regenerate one</span></pre>
   </div></div>
 
   <div class="step"><div class="b">6</div><div>
     <h3>Build the page with motion</h3>
-    <p>Ask Claude Code: “build the page with the BRIEF, style, and images.” It designs a page for the subject and marks the main button (the CTA, the action you want visitors to take) with <code>data-cta</code>. Transitions come from <code>movimento.js</code>, using attributes: <code>data-revela</code> makes a block appear on screen, <code>data-parallax</code> makes an image move more slowly than the scroll, <code>data-intro</code> creates a short opening, <code>data-conta</code> counts a number, and <code>data-contagem</code> shows the days until a date. Motion stops when the system requests “reduce motion.” Copy <code>movimento.js</code> into the website folder before running the gate:</p>
+    <p>Ask Claude Code: “build the page using the BRIEF, style, and images.” It designs a page for the subject and marks the main button (the CTA, the action you want visitors to take) with <code>data-cta</code>. Transitions come from <code>movimento.js</code>, using attributes: <code>data-revela</code> makes a block appear as it enters the screen, <code>data-parallax</code> makes an image move more slowly than the scroll, <code>data-intro</code> creates a short intro, <code>data-conta</code> counts a number, and <code>data-contagem</code> shows the days until a date. Everything stops when the system requests “reduce motion.” Copy <code>movimento.js</code> into the website folder before running the gate:</p>
 <pre><span class="k">&lt;section data-revela="cortina"&gt;</span> <span class="c">… sobe | surge | lado | zoom | cortina</span>
 <span class="k">&lt;img data-parallax="0.12"&gt;</span>  <span class="k">&lt;b data-conta="36"&gt;</span>  <span class="k">&lt;div data-intro="900"&gt;</span>
 <span class="k">&lt;a data-cta href="#encomendar"&gt;</span>Encomendar<span class="k">&lt;/a&gt;</span>
@@ -241,9 +247,9 @@
   </div></div>
 
   <div class="step"><div class="b">7</div><div>
-    <h3>Run the gate</h3>
-    <p>It opens the page at 1440×900 and 390×844, with and without “reduce motion.” Use the <code>--tipo</code> from the BRIEF (<code>negocio</code> or <code>visual</code>). If it returns <code>NÃO PASSA</code>, the list explains why: paste it into Claude Code and ask for a fix. Publish only when it returns <code>PASSA</code>.</p>
-<pre><span class="k">node $S/scripts/portao.js $T/index.html --tipo negocio --fotos $T/fotos</span>
+    <h3>Pass the gate</h3>
+    <p>It opens the page at 1440×900 and 390×844, with and without “reduce motion.” Use the <code>--tipo</code> from the BRIEF (<code>negocio</code> or <code>visual</code>). If you see <code>FAIL</code>, the list explains why: paste it into Claude Code and ask for a fix. Publish only when it says <code>PASSA</code>.</p>
+<pre><span class="k">node $S/scripts/portao.js $T/index.html --tipo negocio --fotos ~/fotos-portao</span>
 <span class="c"># portão visual × conversão — meu-site (negocio)</span>
 <span class="c">#   desktop          CTA na 1ª tela: sim · CTAs: 3 · peso 0.22 MB · erros 0</span>
 <span class="c">#   celular          CTA na 1ª tela: sim · CTAs: 3 · peso 0.55 MB · erros 0</span>
@@ -253,8 +259,10 @@
 
   <div class="step"><div class="b">8</div><div>
     <h3>Publish</h3>
-    <p>The <code>$T</code> folder is already a complete static website. Upload it to GitHub and enable GitHub Pages, GitHub’s free page hosting (or use Vercel or your client’s hosting). Replace <code>YOUR_USERNAME</code> with your GitHub username.</p>
-<pre><span class="k">git config --global user.name</span> <span class="s">"Your Name"</span>; <span class="k">git config --global user.email</span> <span class="s">"you@email.com"</span>  <span class="c"># first time only</span>
+    <p>Folder <code>$T</code> is already a complete static website. Upload it to GitHub and enable GitHub Pages, GitHub’s free page hosting (or use Vercel or your client’s hosting). Replace <code>YOUR_USERNAME</code> with your GitHub username.</p>
+<pre><span class="c"># don’t publish client data or drafts:</span>
+<span class="k">printf</span> <span class="s">'BRIEF.md\nrefs/\nphotos/\nimg/.codex/\nimg/folha.jpg\n'</span> <span class="k">&gt; $T/.gitignore</span>
+<span class="k">git config --global user.name</span> <span class="s">"Your Name"</span>; <span class="k">git config --global user.email</span> <span class="s">"you@email.com"</span>  <span class="c"># first time only</span>
 <span class="k">cd $T && git init -b main && git add -A && git commit -m</span> <span class="s">"site"</span>
 <span class="k">gh repo create my-site --public --source=. --push</span>
 <span class="k">gh api -X POST repos/YOUR_USERNAME/my-site/pages -f "source[branch]=main" -f "source[path]=/"</span></pre>
@@ -264,23 +272,23 @@
 <section id="exemplos"><div class="wrap">
   <span class="chip">Examples</span>
   <h2>Two pilots, two styles unlike our own</h2>
-  <p class="sub">The same kit, different references. Names, places, and prices are fictional. Click to open.</p>
+  <p class="sub">Same toolkit, different references. Names, places, and prices are fictional. Click to open.</p>
   <div class="ex">
-    <figure><a href="../../pilotos/evento/"><img src="../assets/ex1.jpg" alt="Event pilot: watercolor wedding invitation with vineyard, chapel, and pink trumpet tree" loading="lazy"></a><figcaption><b>Event</b> (visual): wine and sage watercolor, opening veil, countdown, curtain story, and RSVP via WhatsApp.</figcaption></figure>
-    <figure><a href="../../pilotos/padaria/"><img src="../assets/ex2.jpg" alt="Bakery pilot: bread on a dark table and an order button above the fold" loading="lazy"></a><figcaption><b>Bakery</b> (business): warm wood-fired oven photos, order button above the fold, and a sticky bar on mobile.</figcaption></figure>
+    <figure><a href="../../pilotos/evento/"><img src="../assets/ex1.jpg" alt="Event pilot: watercolor wedding invitation with a vineyard, chapel, and pink trumpet tree" loading="lazy"></a><figcaption><b>Event</b> (visual): wine and sage watercolor, opening veil, countdown, curtain reveal story, WhatsApp RSVP.</figcaption></figure>
+    <figure><a href="../../pilotos/padaria/"><img src="../assets/ex2.jpg" alt="Bakery pilot: bread on a dark table and an order button above the fold" loading="lazy"></a><figcaption><b>Bakery</b> (business): warm wood-fired oven photography, order button above the fold, and a sticky mobile bar.</figcaption></figure>
   </div>
 </div></section>
 
 <section id="medida"><div class="wrap">
-  <span class="chip">Visual design × conversion</span>
+  <span class="chip">Visuals × conversion</span>
   <h2>Too much beauty can get in the way</h2>
-  <p class="sub">A website exists to help someone do something. The type in the BRIEF determines how much motion fits, and the gate measures it.</p>
+  <p class="sub">A website exists to help someone do something. The type in the BRIEF determines how much motion fits. The gate measures the button (above the fold within 1.5 seconds for business sites), page weight, mobile layout, and “reduce motion”; the skill sets the rest of the motion (short intro, sticky bar), which you can review in the gate screenshots.</p>
   <div class="grid g3">
-    <div class="card"><h3>🧁 Business</h3><p>Button above the fold within 1.5 seconds, no opening sequence, sticky bar on mobile, up to 3 MB.</p><pre><span class="c"># bakery</span>
+    <div class="card"><h3>🧁 Business</h3><p>Button above the fold within 1.5 seconds, no intro, sticky mobile bar, up to 3 MB.</p><pre><span class="c"># bakery</span>
 <span class="k">PASSA</span></pre></div>
-    <div class="card"><h3>💐 Visual</h3><p>Opening of up to 1.2 seconds, curtain, parallax, and countdown; the button can come later, but it must appear. Up to 8 MB.</p><pre><span class="c"># event</span>
+    <div class="card"><h3>💐 Visual</h3><p>Intro up to 1.2 seconds, curtain reveal, parallax, and countdown; the button can come later, but it must appear. Up to 8 MB.</p><pre><span class="c"># event</span>
 <span class="k">PASSA</span></pre></div>
-    <div class="card"><h3>🚫 “Immersive” page</h3><p>An opening that fills a screen and a half, a button far below, and endless animation. This is tested by <code>tests/ruim.html</code>.</p><pre><span class="c"># ruim.html</span>
+    <div class="card"><h3>🚫 “Immersive” page</h3><p>An intro that fills one and a half screens, a button way down the page, and endless animation. This is tested in <code>tests/ruim.html</code>.</p><pre><span class="c"># ruim.html</span>
 <span class="s">NÃO PASSA: CTA fora da primeira tela</span>
 <span class="s">animação rodando com "reduzir movimento"</span></pre></div>
   </div>
@@ -290,9 +298,9 @@
   <span class="chip">Roadmap</span>
   <h2>What’s available and what’s next</h2>
   <p class="sub">Items marked as done are in the repository and have been tested.</p>
-  <div class="phase"><div class="tag">v1 · done</div><div class="d"><strong>Kit + skill + 2 pilots</strong><span>Questions, measured style, images through Codex, movimento.js, gate, and tests (<code>bash tests/rodar.sh</code>).</span></div></div>
-  <div class="phase"><div class="tag">up next</div><div class="d"><strong>Short video from the images</strong><span>An animated clip as the background (Kling and similar tools), optional and only with authorization to use the service; all motion is currently created with code.</span></div></div>
-  <div class="phase"><div class="tag">up next</div><div class="d"><strong>More types in the question guide</strong><span>Clinic, course, real estate: each with its own questions and the right amount of motion.</span></div></div>
+  <div class="phase"><div class="tag">v1 · done</div><div class="d"><strong>Toolkit + skill + 2 pilots</strong><span>Questions, measured style, images with Codex, movimento.js, gate, and tests (<code>bash tests/rodar.sh</code>).</span></div></div>
+  <div class="phase"><div class="tag">next</div><div class="d"><strong>Short video from the images</strong><span>Animated clip as a background (Kling and similar services), optional and only with authorization to use the service; all motion is currently code-based.</span></div></div>
+  <div class="phase"><div class="tag">next</div><div class="d"><strong>More types in the question guide</strong><span>Clinics, courses, real estate: each with its own questions and the right amount of motion.</span></div></div>
 </div></section>
 
 <footer>
