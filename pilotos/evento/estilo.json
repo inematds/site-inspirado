@@ -1,0 +1,89 @@
+{
+  "referencias": [
+    "ref1.png",
+    "ref2.png"
+  ],
+  "paleta": [
+    {
+      "hex": "#ab9085",
+      "peso": 0.136,
+      "luz": 0.6,
+      "saturacao": 0.18
+    },
+    {
+      "hex": "#c8b8a2",
+      "peso": 0.124,
+      "luz": 0.71,
+      "saturacao": 0.26
+    },
+    {
+      "hex": "#f9f9f8",
+      "peso": 0.121,
+      "luz": 0.97,
+      "saturacao": 0.08
+    },
+    {
+      "hex": "#885a5f",
+      "peso": 0.105,
+      "luz": 0.44,
+      "saturacao": 0.2
+    },
+    {
+      "hex": "#f9f4e9",
+      "peso": 0.091,
+      "luz": 0.95,
+      "saturacao": 0.57
+    },
+    {
+      "hex": "#f9f4e8",
+      "peso": 0.089,
+      "luz": 0.94,
+      "saturacao": 0.59
+    },
+    {
+      "hex": "#f9f5e9",
+      "peso": 0.081,
+      "luz": 0.95,
+      "saturacao": 0.57
+    },
+    {
+      "hex": "#fafaf8",
+      "peso": 0.08,
+      "luz": 0.98,
+      "saturacao": 0.17
+    },
+    {
+      "hex": "#faf5ea",
+      "peso": 0.054,
+      "luz": 0.95,
+      "saturacao": 0.62
+    },
+    {
+      "hex": "#efe8da",
+      "peso": 0.05,
+      "luz": 0.9,
+      "saturacao": 0.4
+    },
+    {
+      "hex": "#faf7ed",
+      "peso": 0.034,
+      "luz": 0.95,
+      "saturacao": 0.57
+    },
+    {
+      "hex": "#f7f4ea",
+      "peso": 0.033,
+      "luz": 0.94,
+      "saturacao": 0.45
+    }
+  ],
+  "papeis_sugeridos": {
+    "fundo": "#f9f9f8",
+    "tinta": "#885a5f",
+    "acento": "#ab9085",
+    "contraste_tinta_fundo": 5.42,
+    "contraste_acento_fundo": 2.82,
+    "aviso": "texto corrido precisa de contraste >= 4.5; se o acento não chega lá, ele vira só preenchimento (botão com letra da tinta)."
+  },
+  "prompt_estilo": "loose watercolor on textured cotton paper, burgundy wine, pink ipe blossom, sage green and warm cream palette, thin gold ink accents, soft golden light, airy composition with paper margins, elegant wedding stationery illustration"
+}

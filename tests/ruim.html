@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página ruim de propósito</title>
+<style>
+  body{margin:0;font:18px/1.6 system-ui;background:#111;color:#eee}
+  .intro{height:150vh;display:grid;place-items:center;font-size:64px;animation:gira 6s linear infinite}
+  @keyframes gira{to{filter:hue-rotate(360deg)}}
+  a{display:inline-block;margin:40px;padding:16px 24px;background:#e9b949;color:#111}
+</style></head>
+<body>
+  <!-- erro comum de site "bonito demais": intro gigante e o botão só lá embaixo,
+       e uma animação infinita que ignora "reduzir movimento" -->
+  <div class="intro">Experiência imersiva</div>
+  <a href="#contato" data-cta>Agendar uma conversa</a>
+</body>
+</html>

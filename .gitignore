@@ -1,0 +1,7 @@
+node_modules/
+__pycache__/
+*.log
+longrun/*/fotos/
+**/.codex/
+.codex/
+*.codex.log

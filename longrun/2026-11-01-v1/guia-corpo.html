@@ -1,0 +1,202 @@
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">🎨</span> site-inspirado</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#oque">O que é</a>
+    <a class="sec" href="#fluxo">Como funciona</a>
+    <a class="sec" href="#guia">Guia de uso</a>
+    <a class="sec" href="#exemplos">Exemplos</a>
+    <a class="sec" href="#medida">Visual × conversão</a>
+    <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    <a class="btn" href="https://github.com/inematds/site-inspirado" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">Kit + skill · sites com IA</span>
+      <h1>Sua referência vira o <span class="amb">estilo</span> do site</h1>
+      <p class="lead">Junte 2 a 5 imagens de que você gosta. A IA pergunta antes de gerar, cria todas as imagens no mesmo estilo, monta a página com movimento e confere se o visitante ainda acha o botão.</p>
+      <div class="cta">
+        <a class="btn" href="#guia">Começar o guia</a>
+        <a class="btn ghost" href="https://github.com/inematds/site-inspirado" target="_blank" rel="noopener">Ver no GitHub</a>
+      </div>
+    </div>
+    <figure><img src="assets/banner.jpg" alt="Banner do site-inspirado: referências impressas sobre a mesa virando uma página web"></figure>
+  </div>
+</header>
+
+<section id="resumo" class="resumo"><div class="wrap">
+  <span class="chip">Em resumo</span>
+  <p>O site-inspirado é um kit com uma skill para o Claude Code que cria sites que não têm cara de "feitos por IA". Você entrega imagens de referência (do Pinterest, do convite já impresso, da foto da loja) e a IA faz perguntas e pesquisa antes de gerar qualquer coisa. Depois ela mede o estilo dessas imagens, gera as imagens do site no mesmo estilo pelo Codex e monta a página com transições. No fim, um teste automático confere se o botão principal aparece e se a página funciona no celular. Para usar, você precisa do Claude Code, do Codex logado na sua assinatura, de Python e de Node.</p>
+</div></section>
+
+<section id="oque"><div class="wrap">
+  <span class="chip">O que é</span>
+  <h2>O processo é o diferencial, não o código</h2>
+  <p class="sub">Pedir "faz um site bonito" dá o mesmo site de sempre. Dar referência, responder perguntas e conferir o resultado dá um site com cara própria.</p>
+  <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="As seis etapas do site-inspirado: referências, perguntas, estilo medido, imagens no estilo, movimento e portão" loading="lazy" style="width:100%;display:block"></figure>
+  <div class="grid g3">
+    <div class="card"><h3>🎯 Pergunta antes de gerar</h3><p>Um roteiro de perguntas por tipo de site (evento, negócio, serviço, portfólio). O que a pessoa não respondeu é pesquisado ou fica de fora.</p></div>
+    <div class="card"><h3>🖌️ Estilo medido</h3><p>O <code>estilo.py</code> tira a paleta das referências e calcula o contraste. Todas as imagens recebem o mesmo prompt de estilo e as mesmas referências.</p></div>
+    <div class="card"><h3>✅ Portão antes de publicar</h3><p>O <code>portao.js</code> abre a página no computador e no celular e barra o site que esconde o botão, quebra ou ignora "reduzir movimento".</p></div>
+  </div>
+</div></section>
+
+<section id="fluxo"><div class="wrap">
+  <span class="chip">Como funciona</span>
+  <h2>Seis passos, um portão em cada</h2>
+  <p class="sub">Nenhum passo começa sem o anterior aprovado. Os nomes de arquivo são os que o kit usa.</p>
+  <div class="flow">
+    <span>refs/</span><span class="arr">→</span>
+    <span>BRIEF.md</span><span class="arr">→</span>
+    <span>estilo.json</span><span class="arr">→</span>
+    <span>img/ + folha.jpg</span><span class="arr">→</span>
+    <span>index.html</span><span class="arr">→</span>
+    <span>portão: PASSA</span>
+  </div>
+</div></section>
+
+<section id="pre"><div class="wrap">
+  <span class="chip">Pré-requisitos</span>
+  <h2>O que precisa estar instalado</h2>
+  <p class="sub">Tudo roda na sua máquina. As imagens saem pelo Codex na sua assinatura, sem chave de API.</p>
+  <div class="grid g3">
+    <div class="card"><h3>Codex CLI logado</h3><p>Gera as imagens com <code>image_gen</code>, anexando as referências.</p><pre><span class="c"># confira</span>
+<span class="k">codex login status</span></pre></div>
+    <div class="card"><h3>Python 3 + Pillow</h3><p>Mede a paleta e monta a folha de contato.</p><pre><span class="k">python3 -c</span> <span class="s">"import PIL"</span></pre></div>
+    <div class="card"><h3>Node + Playwright</h3><p>Só o portão usa (navegador sem janela).</p><pre><span class="k">cd skill/site-inspirado/scripts</span>
+<span class="k">npm install && npx playwright install chromium</span></pre></div>
+  </div>
+</div></section>
+
+<section id="guia"><div class="wrap">
+  <span class="chip">Guia de uso · passo a passo</span>
+  <h2>Do zero ao site no ar</h2>
+  <p class="sub"><code>T</code> é a pasta do seu site (uma por site). <code>S</code> é a pasta da skill.</p>
+
+  <div class="step"><div class="b">1</div><div>
+    <h3>Instale a skill</h3>
+    <p>Clone o repositório e ligue a skill ao Claude Code.</p>
+<pre><span class="k">git clone https://github.com/inematds/site-inspirado</span>
+<span class="k">ln -s "$PWD/site-inspirado/skill/site-inspirado" ~/.claude/skills/site-inspirado</span>
+<span class="k">S=~/.claude/skills/site-inspirado; T=~/meu-site; mkdir -p $T/refs</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">2</div><div>
+    <h3>Junte as referências</h3>
+    <p>De 2 a 5 imagens em <code>$T/refs/</code>: o que você já tem (convite, logo, foto da loja) e inspiração (no Pinterest, busque "site padaria" ou "wedding website watercolor"). Uma imagem do que você NÃO quer também ajuda.</p>
+  </div></div>
+
+  <div class="step"><div class="b">3</div><div>
+    <h3>Deixe a IA perguntar primeiro</h3>
+    <p>No Claude Code, abra a skill e diga a frase que muda o resultado. As perguntas por tipo de site estão em <code>referencias/perguntas.md</code>; as respostas vão para <code>$T/BRIEF.md</code>, junto com o tipo: <code>negocio</code> ou <code>visual</code>.</p>
+<pre><span class="k">/site-inspirado</span> <span class="s">"Quero o site da minha padaria. Antes de gerar nada, me pergunte tudo o que precisa e pesquise o que um site deste tipo costuma ter."</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">4</div><div>
+    <h3>Meça o estilo</h3>
+    <p>O script mede a paleta das referências e sugere fundo, texto e destaque com o contraste calculado. O prompt de estilo descreve técnica, luz e cores.</p>
+<pre><span class="k">python3 $S/scripts/estilo.py $T/refs $T/estilo.json --prompt</span> <span class="s">"honest food photography, warm window light, dark walnut, terracotta"</span>
+<span class="c"># estilo.json: 12 cores · fundo #110a04 · tinta #ebdbce (14.55:1) · acento #b07042</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">5</div><div>
+    <h3>Gere as imagens no mesmo estilo</h3>
+    <p>Escreva <code>$T/plano.json</code> (uma linha por imagem: <code>nome</code>, <code>prompt</code> do assunto, <code>largura</code>, <code>altura</code>). Cada imagem leva as referências e a primeira imagem gerada como âncora. Depois, abra a <code>folha.jpg</code> e refaça o que destoar.</p>
+<pre><span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs</span>
+<span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs --so festa</span>  <span class="c"># refaz uma</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">6</div><div>
+    <h3>Monte a página com movimento</h3>
+    <p>Uma página desenhada para o assunto. O <code>movimento.js</code> dá as transições por atributo e para tudo quando o sistema pede "reduzir movimento". O botão principal leva <code>data-cta</code>.</p>
+<pre><span class="k">&lt;section data-revela="cortina"&gt;</span> <span class="c">… sobe | surge | lado | zoom | cortina</span>
+<span class="k">&lt;img data-parallax="0.12"&gt;</span>  <span class="k">&lt;b data-conta="36"&gt;</span>  <span class="k">&lt;div data-intro="900"&gt;</span>
+<span class="k">&lt;a data-cta href="#encomendar"&gt;</span>Encomendar<span class="k">&lt;/a&gt;</span>
+<span class="k">&lt;script src="movimento.js"&gt;&lt;/script&gt;</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">7</div><div>
+    <h3>Passe no portão</h3>
+    <p>Abre a página em 1440×900 e 390×844, com e sem "reduzir movimento". Só publique com <code>PASSA</code>.</p>
+<pre><span class="k">node $S/scripts/portao.js $T/index.html --tipo negocio --fotos $T/fotos</span>
+<span class="c">#   desktop   CTA na 1ª tela: sim · CTAs: 3 · erros 0</span>
+<span class="c">#   celular   CTA na 1ª tela: sim · CTAs: 3 · erros 0</span>
+<span class="c"># PASSA</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">8</div><div>
+    <h3>Publique</h3>
+    <p>Copie o <code>movimento.js</code> para a pasta do site e publique como site estático (GitHub Pages, Vercel ou a hospedagem do cliente).</p>
+<pre><span class="k">cp $S/runtime/movimento.js $T/ && cd $T && git init && git add -A && git commit -m</span> <span class="s">"site"</span></pre>
+  </div></div>
+</div></section>
+
+<section id="exemplos"><div class="wrap">
+  <span class="chip">Exemplos</span>
+  <h2>Dois pilotos, dois estilos que não são o nosso</h2>
+  <p class="sub">Mesmo kit, referências diferentes. Nomes, lugares e preços são fictícios. Clique para abrir.</p>
+  <div class="ex">
+    <figure><a href="../pilotos/evento/"><img src="assets/ex1.jpg" alt="Piloto evento: convite de casamento em aquarela com vinhedo, capela e ipê-rosa" loading="lazy"></a><figcaption><b>Evento</b> (visual): aquarela vinho e sálvia, véu de abertura, contagem regressiva, história em cortina, confirmação pelo WhatsApp.</figcaption></figure>
+    <figure><a href="../pilotos/padaria/"><img src="assets/ex2.jpg" alt="Piloto padaria: pães sobre mesa escura e botão de encomendar na primeira tela" loading="lazy"></a><figcaption><b>Padaria</b> (negócio): foto quente de forno a lenha, botão de encomenda na 1ª tela e barra fixa no celular.</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="medida"><div class="wrap">
+  <span class="chip">Visual × conversão</span>
+  <h2>Bonito demais também atrapalha</h2>
+  <p class="sub">Um site existe para alguém fazer alguma coisa. O tipo no BRIEF decide quanto movimento cabe, e o portão mede.</p>
+  <div class="grid g3">
+    <div class="card"><h3>🧁 Negócio</h3><p>Botão na 1ª tela em até 1,5 s, sem abertura, barra fixa no celular, até 3 MB.</p><pre><span class="c"># padaria</span>
+<span class="k">PASSA</span></pre></div>
+    <div class="card"><h3>💐 Visual</h3><p>Abertura de até 1,2 s, cortina, parallax e contagem; o botão pode vir depois, mas tem de aparecer. Até 8 MB.</p><pre><span class="c"># evento</span>
+<span class="k">PASSA</span></pre></div>
+    <div class="card"><h3>🚫 Página "imersiva"</h3><p>Abertura que ocupa uma tela e meia, botão lá embaixo e animação infinita. É o teste <code>tests/ruim.html</code>.</p><pre><span class="c"># ruim.html</span>
+<span class="s">NÃO PASSA: CTA fora da primeira tela</span>
+<span class="s">animação rodando com "reduzir movimento"</span></pre></div>
+  </div>
+</div></section>
+
+<section id="roadmap"><div class="wrap">
+  <span class="chip">Roadmap</span>
+  <h2>O que existe e o que vem</h2>
+  <p class="sub">O que está marcado como feito está no repositório e foi testado.</p>
+  <div class="phase"><div class="tag">v1 · feito</div><div class="d"><strong>Kit + skill + 2 pilotos</strong><span>Perguntas, estilo medido, imagens pelo Codex, movimento.js, portão e testes (<code>bash tests/rodar.sh</code>).</span></div></div>
+  <div class="phase"><div class="tag">próximo</div><div class="d"><strong>Vídeo curto a partir das imagens</strong><span>Clipe animado como fundo (Kling e similares), opcional e só com autorização para o serviço; hoje todo o movimento é código.</span></div></div>
+  <div class="phase"><div class="tag">próximo</div><div class="d"><strong>Mais tipos no roteiro de perguntas</strong><span>Clínica, curso, imobiliária: cada um com suas perguntas e a dose certa de movimento.</span></div></div>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Claude Code</div><div class="pill">Codex image_gen</div><div class="pill">Playwright</div>
+    <p style="margin-top:18px">site-inspirado · MIT ·
+      <a href="https://github.com/inematds/site-inspirado">inematds/site-inspirado</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='site-inspirado-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      localStorage.setItem(KEY, light?'light':'dark');
+    });
+  })();
+</script>
+</body>
+</html>

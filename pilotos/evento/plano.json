@@ -1,0 +1,10 @@
+[
+  {"nome": "hero", "prompt": "wide panoramic view of rolling vineyard hills in Vale dos Vinhedos, southern Brazil, a small stone chapel among the vines, a large blooming pink ipe tree in the foreground, late afternoon light", "largura": 1536, "altura": 864},
+  {"nome": "historia1", "prompt": "a young couple seen from behind sitting on a library staircase sharing one old book, warm afternoon light through tall windows", "largura": 896, "altura": 1152},
+  {"nome": "historia2", "prompt": "a couple seen from behind hiking at the edge of a huge green canyon with waterfalls and mist, southern Brazil highlands", "largura": 896, "altura": 1152},
+  {"nome": "historia3", "prompt": "a couple seen from afar under a pink ipe tree at sunset in a vineyard, one kneeling, intimate and tiny in the landscape", "largura": 896, "altura": 1152},
+  {"nome": "cerimonia", "prompt": "garden ceremony setup beside a small stone chapel, rows of wooden chairs, arch of eucalyptus and pink flowers, vineyards behind", "largura": 1280, "altura": 896},
+  {"nome": "festa", "prompt": "long wooden banquet table under string lights between grapevine rows at dusk, wine glasses, candles, bunches of grapes", "largura": 1280, "altura": 896},
+  {"nome": "traje", "prompt": "two elegant outfits on a rack: a flowing sage green dress and a burgundy linen suit, a straw hat and comfortable heeled sandals, garden party style", "largura": 1024, "altura": 1024},
+  {"nome": "passeio", "prompt": "old steam train with smoke crossing a stone bridge among vineyards and araucaria trees in the Serra Gaucha", "largura": 1280, "altura": 896}
+]

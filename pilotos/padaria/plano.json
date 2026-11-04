@@ -1,0 +1,8 @@
+[
+  {"nome": "hero", "prompt": "rustic sourdough loaves and a baguette cooling on a dark walnut table in a small bakery at early morning, steam rising, terracotta brick wall behind, warm side light", "largura": 1536, "altura": 1024},
+  {"nome": "pao-italiano", "prompt": "close-up of a large round Italian country loaf with deep scored crust, cut open showing open crumb, on flour-dusted wood", "largura": 1024, "altura": 1024},
+  {"nome": "focaccia", "prompt": "rectangular focaccia with rosemary, cherry tomatoes and olive oil in a dark baking tray, top view on wood", "largura": 1024, "altura": 1024},
+  {"nome": "croissant", "prompt": "three golden flaky butter croissants on a linen cloth next to a coffee cup, morning light", "largura": 1024, "altura": 1024},
+  {"nome": "cuca", "prompt": "slice of homemade German-Brazilian cuca cake with purple grape filling and crumbly streusel topping on a ceramic plate", "largura": 1024, "altura": 1024},
+  {"nome": "forno", "prompt": "baker sliding loaves into a glowing wood-fired brick oven with a long wooden peel, sparks and warm orange light", "largura": 1280, "altura": 896}
+]
