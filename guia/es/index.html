@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>site-inspirado — tu referencia se convierte en el estilo del sitio</title>
-<meta name="description" content="Kit y skill para crear sitios con identidad propia: las referencias se convierten en un estilo medido, la IA pregunta antes de generar, imágenes del mismo estilo con Codex y una puerta de control que verifica el botón antes de publicar.">
+<meta name="description" content="Kit y skill para crear sitios con estilo propio: las referencias se convierten en un estilo medido, la IA pregunta antes de generar, imágenes con el mismo estilo mediante Codex y una puerta de control que verifica el botón antes de publicar.">
 <link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/site-inspirado/guia/">
 <link rel="alternate" hreflang="en" href="https://inematds.github.io/site-inspirado/guia/en/">
 <link rel="alternate" hreflang="es" href="https://inematds.github.io/site-inspirado/guia/es/">
@@ -133,146 +133,151 @@
     <div>
       <span class="chip">Kit + skill · sitios con IA</span>
       <h1>Tu referencia se convierte en el <span class="amb">estilo</span> del sitio</h1>
-      <p class="lead">Reúne de 2 a 5 imágenes que te gusten. La IA pregunta antes de generar, crea todas las imágenes con el mismo estilo, arma la página con movimiento y verifica si el visitante todavía encuentra el botón.</p>
+      <p class="lead">Reúne de 2 a 5 imágenes que te gusten. La IA pregunta antes de generar, crea todas las imágenes con el mismo estilo, arma la página con movimiento y comprueba si el visitante todavía encuentra el botón.</p>
       <div class="cta">
         <a class="btn" href="#guia">Empezar la guía</a>
         <a class="btn ghost" href="https://github.com/inematds/site-inspirado" target="_blank" rel="noopener">Ver en GitHub</a>
       </div>
     </div>
-    <figure><img src="../assets/banner-es.jpg" alt="Banner de site-inspirado: referencias impresas sobre la mesa se convierten en una página web"></figure>
+    <figure><img src="../assets/banner-es.jpg" alt="Banner de site-inspirado: referencias impresas sobre la mesa que se convierten en una página web"></figure>
   </div>
 </header>
 
 <section id="resumo" class="resumo"><div class="wrap">
   <span class="chip">En resumen</span>
-  <p>site-inspirado es un kit con una skill para Claude Code que crea sitios que no parecen «hechos por IA». Le das imágenes de referencia (de Pinterest, de una invitación ya impresa o de la foto de la tienda) y la IA hace preguntas e investiga antes de generar nada. Después mide el estilo de esas imágenes, genera las imágenes del sitio con ese mismo estilo mediante Codex y arma la página con transiciones. Al final, una prueba automática verifica que aparezca el botón principal y que la página funcione en el celular. Para usarlo, necesitas Claude Code, Codex con tu sesión iniciada, Python y Node.</p>
+  <p>site-inspirado es un kit con una skill para Claude Code que crea sitios que no parecen «hechos por IA». Entregas imágenes de referencia (de Pinterest, de una invitación impresa o de una foto del local) y la IA hace preguntas e investiga antes de generar cualquier cosa. Después mide el estilo de esas imágenes, genera las imágenes del sitio con el mismo estilo mediante Codex y arma la página con transiciones. Al final, una prueba automática comprueba si aparece el botón principal y si la página funciona en el celular. Para usarlo, necesitas Claude Code, Codex con tu cuenta iniciada, Python y Node.</p>
 </div></section>
 
 <section id="oque"><div class="wrap">
   <span class="chip">Qué es</span>
   <h2>La diferencia está en el proceso, no en el código</h2>
-  <p class="sub">Pedir «haz un sitio bonito» da el mismo sitio de siempre. Dar referencias, responder preguntas y revisar el resultado produce un sitio con identidad propia.</p>
+  <p class="sub">Pedir «haz un sitio bonito» da siempre el mismo sitio de siempre. Dar referencias, responder preguntas y revisar el resultado da como resultado un sitio con estilo propio.</p>
   <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-es.jpg" alt="Las seis etapas de site-inspirado: referencias, preguntas, estilo medido, imágenes con el estilo, movimiento y puerta de control" loading="lazy" style="width:100%;display:block"></figure>
   <div class="grid g3">
     <div class="card"><h3>🎯 Pregunta antes de generar</h3><p>Una guía de preguntas según el tipo de sitio (evento, negocio, servicio, portafolio). Lo que la persona no responda se investiga o se deja fuera.</p></div>
     <div class="card"><h3>🖌️ Estilo medido</h3><p><code>estilo.py</code> extrae la paleta de las referencias y calcula el contraste. Todas las imágenes reciben el mismo prompt de estilo y las mismas referencias.</p></div>
-    <div class="card"><h3>✅ Puerta de control antes de publicar</h3><p><code>portao.js</code> abre la página en una computadora y en un celular, y bloquea los sitios que ocultan el botón, fallan o ignoran «reducir movimiento».</p></div>
+    <div class="card"><h3>✅ Puerta de control antes de publicar</h3><p><code>portao.js</code> abre la página en la computadora y en el celular, y bloquea el sitio si oculta el botón, falla o ignora la opción «reducir movimiento».</p></div>
   </div>
 </div></section>
 
 <section id="fluxo"><div class="wrap">
   <span class="chip">Cómo funciona</span>
   <h2>Seis etapas, una revisión en cada una</h2>
-  <p class="sub">Ninguna etapa comienza sin que se apruebe la anterior. La guía de abajo tiene 8 pasos: instalar, estas 6 etapas (pasos 2 a 7) y publicar. La «puerta de control» es la prueba automática del final.</p>
+  <p class="sub">Ninguna etapa empieza sin que se apruebe la anterior. La guía de abajo tiene 8 pasos: instalar, estas 6 etapas (pasos 2 a 7) y publicar. La «puerta de control» es la prueba automática del final.</p>
   <div class="flow">
     <span>refs/</span><span class="arr">→</span>
     <span>BRIEF.md</span><span class="arr">→</span>
     <span>estilo.json</span><span class="arr">→</span>
     <span>img/ + hoja.jpg</span><span class="arr">→</span>
     <span>index.html</span><span class="arr">→</span>
-    <span>puerta de control: APROBADO</span>
+    <span>puerta: PASA</span>
   </div>
 </div></section>
 
 <section id="pre"><div class="wrap">
-  <span class="chip">Requisitos</span>
-  <h2>Qué necesitas instalar</h2>
-  <p class="sub">Todo funciona en tu computadora. Las imágenes se generan con Codex mediante tu suscripción, sin una clave de API.</p>
+  <span class="chip">Requisitos previos</span>
+  <h2>Qué necesitas tener instalado</h2>
+  <p class="sub">Todo se ejecuta en tu computadora. Las imágenes se generan con Codex usando tu suscripción, sin clave de API.</p>
   <div class="grid g3">
-    <div class="card"><h3>Codex CLI con sesión iniciada</h3><p>Genera imágenes con <code>image_gen</code> (el generador de imágenes de Codex), adjuntando las referencias. El script ejecuta Codex sin pedir confirmación por cada imagen (<code>--dangerously-bypass-approvals-and-sandbox</code>): úsalo en una carpeta exclusiva para el sitio.</p><pre><span class="c"># verificar</span>
-<span class="k">codex login status</span></pre></div>
-    <div class="card"><h3>Python 3 + Pillow</h3><p>Mide la paleta y crea la hoja de contacto.</p><pre><span class="k">python3 -c</span> <span class="s">"import PIL"</span></pre></div>
-    <div class="card"><h3>Node + Playwright</h3><p>Solo lo usa la puerta de control (navegador sin ventana).</p><pre><span class="k">cd skill/site-inspirado/scripts</span>
-<span class="k">npm install && npx playwright install chromium</span></pre></div>
+    <div class="card"><h3>Codex CLI con sesión iniciada</h3><p>Genera las imágenes con <code>image_gen</code> (el generador de imágenes de Codex), adjuntando las referencias. El script ejecuta Codex sin pedir confirmación para cada imagen (<code>--dangerously-bypass-approvals-and-sandbox</code>): úsalo en una carpeta exclusiva para el sitio.</p><pre><span class="k">npm i -g @openai/codex</span>   <span class="c"># instala</span>
+<span class="k">codex login</span>              <span class="c"># inicia sesión con tu cuenta de ChatGPT</span>
+<span class="k">codex login status</span>       <span class="c"># comprueba</span></pre></div>
+    <div class="card"><h3>Python 3 + Pillow</h3><p>Mide la paleta y crea la hoja de contacto.</p><pre><span class="k">python3 -m pip install --user pillow</span>
+<span class="k">python3 -c</span> <span class="s">"import PIL"</span>  <span class="c"># comprueba</span></pre></div>
+    <div class="card"><h3>Node 18+ y GitHub CLI</h3><p>Node ejecuta la puerta de control (que abre la página en un navegador sin ventana, instalado en el paso 1). <code>gh</code> publica en el paso 8.</p><pre><span class="k">node -v</span>             <span class="c"># 18 o superior</span>
+<span class="k">gh auth login</span>      <span class="c"># gh: cli.github.com</span></pre></div>
   </div>
 </div></section>
 
 <section id="guia"><div class="wrap">
   <span class="chip">Guía de uso · paso a paso</span>
-  <h2>De cero a tener el sitio en línea</h2>
+  <h2>De cero a un sitio publicado</h2>
   <p class="sub"><code>T</code> es la carpeta de tu sitio (una por sitio). <code>S</code> es la carpeta de la skill. Los pasos 3 y 6 los haces conversando con Claude Code; los demás son comandos en la terminal.</p>
 
   <div class="step"><div class="b">1</div><div>
     <h3>Instala la skill</h3>
-    <p>Clona el repositorio y conecta la skill con Claude Code. <code>S</code> y <code>T</code> solo tienen validez en la terminal donde las creaste: en una terminal nueva, vuelve a ejecutar la tercera línea.</p>
+    <p>Clona el repositorio y conecta la skill a Claude Code. <code>S</code> y <code>T</code> solo tienen validez en la terminal donde las creaste: en una terminal nueva, vuelve a ejecutar la tercera línea. Ejecuta las líneas en la carpeta donde quieres guardar el kit (<code>ln -s</code> usa la carpeta actual).</p>
 <pre><span class="k">git clone https://github.com/inematds/site-inspirado</span>
 <span class="k">mkdir -p ~/.claude/skills && ln -s "$PWD/site-inspirado/skill/site-inspirado" ~/.claude/skills/site-inspirado</span>
-<span class="k">S=~/.claude/skills/site-inspirado; T=~/mi-sitio; mkdir -p $T/refs</span></pre>
+<span class="k">S=~/.claude/skills/site-inspirado; T=~/mi-sitio; mkdir -p $T/refs</span>
+<span class="k">cd $S/scripts && npm install && npx playwright install chromium && cd -</span>  <span class="c"># navegador de la puerta de control</span></pre>
   </div></div>
 
   <div class="step"><div class="b">2</div><div>
     <h3>Reúne las referencias</h3>
-    <p>De 2 a 5 imágenes en <code>$T/refs/</code>: lo que ya tienes (invitación, logo, foto de la tienda) e inspiración (en Pinterest, busca «sitio panadería» o «wedding website watercolor»). Una imagen de lo que NO quieres también ayuda.</p>
+    <p>De 2 a 5 imágenes en <code>$T/refs/</code>: lo que ya tienes (invitación, logo, foto del local) e inspiración (en Pinterest, busca «sitio panadería» o «wedding website watercolor»). También ayuda una imagen de lo que NO quieres.</p>
   </div></div>
 
   <div class="step"><div class="b">3</div><div>
     <h3>Deja que la IA pregunte primero</h3>
-    <p>En Claude Code, abre la skill y di la frase que cambia el resultado. Las preguntas según el tipo de sitio están en <code>referencias/perguntas.md</code>; las respuestas van a <code>$T/BRIEF.md</code>, junto con el tipo: <code>negocio</code> (el sitio busca que el visitante realice una acción: hacer un pedido, agendar) o <code>visual</code> (evento, portafolio: puede tener más movimiento).</p>
+    <p>En Claude Code, abre la skill y di la frase que cambia el resultado. Las preguntas según el tipo de sitio están en <code>referencias/perguntas.md</code>; las respuestas van a <code>$T/BRIEF.md</code>, junto con el tipo: <code>negocio</code> (el sitio existe para que alguien realice una acción: hacer un pedido, agendar una cita) o <code>visual</code> (evento, portafolio: puede tener más movimiento).</p>
 <pre><span class="k">/site-inspirado</span> <span class="s">"Quiero el sitio de mi panadería. Antes de generar nada, pregúntame todo lo que necesites e investiga qué suele tener un sitio de este tipo."</span></pre>
   </div></div>
 
   <div class="step"><div class="b">4</div><div>
     <h3>Mide el estilo</h3>
-    <p>El script mide la paleta de las referencias y sugiere fondo, texto y color de acento según el contraste calculado. El prompt de estilo describe la técnica, la luz y los colores.</p>
+    <p>El script mide la paleta de las referencias y sugiere el fondo, el texto y los colores de énfasis según el contraste calculado. El prompt de estilo describe la técnica, la luz y los colores.</p>
 <pre><span class="k">python3 $S/scripts/estilo.py $T/refs $T/estilo.json --prompt</span> <span class="s">"honest food photography, warm window light, dark walnut, terracotta"</span>
 <span class="c"># estilo.json: 12 colores · fondo #110a04 · tinta #ebdbce (14.55:1) · acento #b07042</span></pre>
   </div></div>
 
   <div class="step"><div class="b">5</div><div>
     <h3>Genera las imágenes con el mismo estilo</h3>
-    <p>Escribe <code>$T/plano.json</code> (una línea por imagen: <code>nome</code>, <code>prompt</code> del tema, <code>largura</code>, <code>altura</code>). Cada imagen incluye las referencias y la primera imagen generada como modelo (la «ancla»), para que toda la serie mantenga el mismo estilo. Al final se crea <code>folha.jpg</code>, una hoja con todas las imágenes lado a lado: revísala y vuelve a generar las que desentonen. Modelo listo: <code>pilotos/padaria/plano.json</code>.</p>
-<pre><span class="c"># plano.json: [{"nombre": "hero", "prompt": "panes enfriándose sobre la mesa", "ancho": 1536, "alto": 1024}, ...]</span>
+    <p>Escribe <code>$T/plano.json</code> (una línea por imagen: <code>nome</code>, <code>prompt</code> del tema, <code>largura</code>, <code>altura</code>). Cada imagen lleva las referencias y la primera imagen generada como modelo (el «ancla») para que toda la serie mantenga el mismo estilo. Al final se crea <code>folha.jpg</code>, una hoja con todas las imágenes una al lado de la otra: revísala y vuelve a generar las que desentonen. No necesitas escribir el JSON a mano: pídele a Claude Code «escribe el plano.json a partir del BRIEF» o copia <code>pilotos/padaria/plano.json</code> y cambia los textos. Cada imagen tarda alrededor de 1 minuto y consume la cuota de tu suscripción de Codex.</p>
+<pre><span class="c"># plano.json: [{"nome": "hero", "prompt": "panes enfriándose sobre la mesa", "largura": 1536, "altura": 1024}, ...]</span>
 <span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs</span>
 <span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs --so croissant</span>  <span class="c"># vuelve a generar una</span></pre>
   </div></div>
 
   <div class="step"><div class="b">6</div><div>
     <h3>Arma la página con movimiento</h3>
-    <p>Pídele a Claude Code: «arma la página con el BRIEF, el estilo y las imágenes». Diseñará una página para el tema y marcará el botón principal (el CTA, la acción que quieres que realice el visitante) con <code>data-cta</code>. Las transiciones vienen de <code>movimento.js</code> y se configuran con atributos: <code>data-revela</code> hace que el bloque aparezca al entrar en pantalla, <code>data-parallax</code> hace que la imagen se mueva más despacio que el desplazamiento, <code>data-intro</code> crea una breve apertura, <code>data-conta</code> cuenta un número y <code>data-contagem</code> muestra los días que faltan para una fecha. Todo se detiene cuando el sistema pide «reducir movimiento». Copia <code>movimento.js</code> a la carpeta del sitio antes de pasar la puerta de control:</p>
+    <p>Pídele a Claude Code: «arma la página con el BRIEF, el estilo y las imágenes». Diseña una página para el tema y marca el botón principal (el CTA, la acción que quieres que realice el visitante) con <code>data-cta</code>. Las transiciones vienen de <code>movimento.js</code> y se activan mediante atributos: <code>data-revela</code> hace que el bloque aparezca en pantalla, <code>data-parallax</code> hace que la imagen se mueva más lento que el desplazamiento, <code>data-intro</code> crea una breve apertura, <code>data-conta</code> cuenta un número y <code>data-contagem</code> muestra los días que faltan para una fecha. Todo se detiene cuando el sistema solicita «reducir movimiento». Copia <code>movimento.js</code> a la carpeta del sitio antes de pasar la puerta de control:</p>
 <pre><span class="k">&lt;section data-revela="cortina"&gt;</span> <span class="c">… sube | aparece | lado | zoom | cortina</span>
 <span class="k">&lt;img data-parallax="0.12"&gt;</span>  <span class="k">&lt;b data-conta="36"&gt;</span>  <span class="k">&lt;div data-intro="900"&gt;</span>
-<span class="k">&lt;a data-cta href="#encomendar"&gt;</span>Hacer pedido<span class="k">&lt;/a&gt;</span>
+<span class="k">&lt;a data-cta href="#encomendar"&gt;</span>Hacer un pedido<span class="k">&lt;/a&gt;</span>
 <span class="k">&lt;script src="movimento.js"&gt;&lt;/script&gt;</span>
 <span class="k">cp $S/runtime/movimento.js $T/</span></pre>
   </div></div>
 
   <div class="step"><div class="b">7</div><div>
     <h3>Pasa la puerta de control</h3>
-    <p>Abre la página en 1440×900 y 390×844, con y sin «reducir movimiento». Publícala solo si aparece <code>PASSA</code>.</p>
+    <p>Abre la página a 1440×900 y 390×844, con y sin la opción «reducir movimiento». Usa el <code>--tipo</code> que aparece en el BRIEF (<code>negocio</code> o <code>visual</code>). Si aparece <code>NO PASA</code>, la lista indica el motivo: pégala en Claude Code y pide que lo corrija. Publica solo si aparece <code>PASA</code>.</p>
 <pre><span class="k">node $S/scripts/portao.js $T/index.html --tipo negocio --fotos $T/fotos</span>
-<span class="c">#   escritorio   CTA en la 1.ª pantalla: sí · CTA: 3 · errores 0</span>
-<span class="c">#   celular      CTA en la 1.ª pantalla: sí · CTA: 3 · errores 0</span>
-<span class="c"># PASSA</span></pre>
+<span class="c"># puerta visual × conversión — mi-sitio (negocio)</span>
+<span class="c">#   escritorio          CTA en la 1.ª pantalla: sí · CTA: 3 · peso 0.22 MB · errores 0</span>
+<span class="c">#   celular              CTA en la 1.ª pantalla: sí · CTA: 3 · peso 0.55 MB · errores 0</span>
+<span class="c">#   escritorio+reducir … · celular+reducir …</span>
+<span class="c"># PASA</span></pre>
   </div></div>
 
   <div class="step"><div class="b">8</div><div>
     <h3>Publica</h3>
-    <p>La carpeta <code>$T</code> ya es un sitio estático completo. Súbelo a GitHub y activa Pages (o usa Vercel o el servicio de alojamiento del cliente).</p>
-<pre><span class="k">cd $T && git init -b main && git add -A && git commit -m</span> <span class="s">"sitio"</span>
-<span class="k">gh repo create mi-sitio --public --source=. --push</span>
-<span class="k">gh api -X POST repos/&lt;usuario&gt;/mi-sitio/pages -f "source[branch]=main" -f "source[path]=/"</span></pre>
+    <p>La carpeta <code>$T</code> ya es un sitio estático completo. Súbela a GitHub y activa GitHub Pages, el alojamiento gratuito de páginas de GitHub (o usa Vercel o el alojamiento del cliente). Cambia <code>SEU_USUARIO</code> por tu usuario de GitHub.</p>
+<pre><span class="k">cd $T && git init -b main && git add -A && git commit -m</span> <span class="s">"site"</span>
+<span class="k">gh repo create meu-site --public --source=. --push</span>
+<span class="k">gh api -X POST repos/SEU_USUARIO/meu-site/pages -f "source[branch]=main" -f "source[path]=/"</span></pre>
   </div></div>
 </div></section>
 
 <section id="exemplos"><div class="wrap">
   <span class="chip">Ejemplos</span>
-  <h2>Dos pilotos, dos estilos que no son los nuestros</h2>
+  <h2>Dos pilotos, dos estilos que no son el nuestro</h2>
   <p class="sub">El mismo kit, distintas referencias. Los nombres, lugares y precios son ficticios. Haz clic para abrir.</p>
   <div class="ex">
-    <figure><a href="../../pilotos/evento/"><img src="../assets/ex1.jpg" alt="Piloto de evento: invitación de boda en acuarela con viñedo, capilla y árbol ipê rosa" loading="lazy"></a><figcaption><b>Evento</b> (visual): acuarela en vino y salvia, velo de apertura, cuenta regresiva, historia en cortina y confirmación por WhatsApp.</figcaption></figure>
-    <figure><a href="../../pilotos/padaria/"><img src="../assets/ex2.jpg" alt="Piloto de panadería: panes sobre una mesa oscura y botón para hacer un pedido en la primera pantalla" loading="lazy"></a><figcaption><b>Panadería</b> (negocio): foto cálida de un horno de leña, botón para hacer un pedido en la 1.ª pantalla y barra fija en el celular.</figcaption></figure>
+    <figure><a href="../../pilotos/evento/"><img src="../assets/ex1.jpg" alt="Piloto de evento: invitación de boda en acuarela con viñedo, capilla e ipé rosado" loading="lazy"></a><figcaption><b>Evento</b> (visual): acuarela en tonos vino y salvia, velo de apertura, cuenta regresiva, historia en cortina y confirmación por WhatsApp.</figcaption></figure>
+    <figure><a href="../../pilotos/padaria/"><img src="../assets/ex2.jpg" alt="Piloto de panadería: panes sobre una mesa oscura y botón para hacer un pedido en la primera pantalla" loading="lazy"></a><figcaption><b>Panadería</b> (negocio): foto cálida de horno de leña, botón para hacer un pedido en la primera pantalla y barra fija en el celular.</figcaption></figure>
   </div>
 </div></section>
 
 <section id="medida"><div class="wrap">
   <span class="chip">Visual × conversión</span>
   <h2>Demasiada belleza también puede estorbar</h2>
-  <p class="sub">Un sitio existe para que alguien haga algo. El tipo indicado en el BRIEF determina cuánto movimiento cabe, y la puerta de control lo mide.</p>
+  <p class="sub">Un sitio existe para que alguien haga algo. El tipo en el BRIEF determina cuánto movimiento puede tener, y la puerta de control lo mide.</p>
   <div class="grid g3">
-    <div class="card"><h3>🧁 Negocio</h3><p>Botón en la 1.ª pantalla en un máximo de 1,5 s, sin apertura, barra fija en el celular y hasta 3 MB.</p><pre><span class="c"># panadería</span>
-<span class="k">PASSA</span></pre></div>
+    <div class="card"><h3>🧁 Negocio</h3><p>Botón en la primera pantalla en hasta 1,5 s, sin apertura, barra fija en el celular y hasta 3 MB.</p><pre><span class="c"># panadería</span>
+<span class="k">PASA</span></pre></div>
     <div class="card"><h3>💐 Visual</h3><p>Apertura de hasta 1,2 s, cortina, parallax y cuenta regresiva; el botón puede aparecer después, pero debe verse. Hasta 8 MB.</p><pre><span class="c"># evento</span>
-<span class="k">PASSA</span></pre></div>
+<span class="k">PASA</span></pre></div>
     <div class="card"><h3>🚫 Página «inmersiva»</h3><p>Apertura que ocupa una pantalla y media, botón hasta abajo y animación infinita. Es la prueba <code>tests/ruim.html</code>.</p><pre><span class="c"># ruim.html</span>
 <span class="s">NO PASA: CTA fuera de la primera pantalla</span>
 <span class="s">animación activa con «reducir movimiento»</span></pre></div>
@@ -280,11 +285,11 @@
 </div></section>
 
 <section id="roadmap"><div class="wrap">
-  <span class="chip">Hoja de ruta</span>
+  <span class="chip">Plan de ruta</span>
   <h2>Lo que ya existe y lo que viene</h2>
-  <p class="sub">Lo que aparece como terminado está en el repositorio y se probó.</p>
+  <p class="sub">Lo que aparece como terminado está en el repositorio y fue probado.</p>
   <div class="phase"><div class="tag">v1 · listo</div><div class="d"><strong>Kit + skill + 2 pilotos</strong><span>Preguntas, estilo medido, imágenes con Codex, movimento.js, puerta de control y pruebas (<code>bash tests/rodar.sh</code>).</span></div></div>
-  <div class="phase"><div class="tag">siguiente</div><div class="d"><strong>Video corto a partir de las imágenes</strong><span>Clip animado como fondo (Kling y similares), opcional y solo con autorización para el servicio; hoy todo el movimiento se crea con código.</span></div></div>
+  <div class="phase"><div class="tag">siguiente</div><div class="d"><strong>Video corto a partir de las imágenes</strong><span>Clip animado como fondo (Kling y similares), opcional y solo con autorización para el servicio; por ahora, todo el movimiento se crea con código.</span></div></div>
   <div class="phase"><div class="tag">siguiente</div><div class="d"><strong>Más tipos en la guía de preguntas</strong><span>Clínica, curso, inmobiliaria: cada uno con sus preguntas y la cantidad adecuada de movimiento.</span></div></div>
 </div></section>
 

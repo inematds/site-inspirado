@@ -179,11 +179,13 @@
   <h2>O que precisa estar instalado</h2>
   <p class="sub">Tudo roda na sua máquina. As imagens saem pelo Codex na sua assinatura, sem chave de API.</p>
   <div class="grid g3">
-    <div class="card"><h3>Codex CLI logado</h3><p>Gera as imagens com o <code>image_gen</code> (o gerador de imagem do Codex), anexando as referências. O script roda o Codex sem pedir confirmação a cada imagem (<code>--dangerously-bypass-approvals-and-sandbox</code>): use numa pasta só do site.</p><pre><span class="c"># confira</span>
-<span class="k">codex login status</span></pre></div>
-    <div class="card"><h3>Python 3 + Pillow</h3><p>Mede a paleta e monta a folha de contato.</p><pre><span class="k">python3 -c</span> <span class="s">"import PIL"</span></pre></div>
-    <div class="card"><h3>Node + Playwright</h3><p>Só o portão usa (navegador sem janela).</p><pre><span class="k">cd skill/site-inspirado/scripts</span>
-<span class="k">npm install && npx playwright install chromium</span></pre></div>
+    <div class="card"><h3>Codex CLI logado</h3><p>Gera as imagens com o <code>image_gen</code> (o gerador de imagem do Codex), anexando as referências. O script roda o Codex sem pedir confirmação a cada imagem (<code>--dangerously-bypass-approvals-and-sandbox</code>): use numa pasta só do site.</p><pre><span class="k">npm i -g @openai/codex</span>   <span class="c"># instala</span>
+<span class="k">codex login</span>              <span class="c"># entra com a conta do ChatGPT</span>
+<span class="k">codex login status</span>       <span class="c"># confere</span></pre></div>
+    <div class="card"><h3>Python 3 + Pillow</h3><p>Mede a paleta e monta a folha de contato.</p><pre><span class="k">python3 -m pip install --user pillow</span>
+<span class="k">python3 -c</span> <span class="s">"import PIL"</span>  <span class="c"># confere</span></pre></div>
+    <div class="card"><h3>Node 18+ e GitHub CLI</h3><p>O Node roda o portão (que abre a página num navegador sem janela, instalado no passo 1). O <code>gh</code> publica no passo 8.</p><pre><span class="k">node -v</span>             <span class="c"># 18 ou mais</span>
+<span class="k">gh auth login</span>      <span class="c"># gh: cli.github.com</span></pre></div>
   </div>
 </div></section>
 
@@ -194,10 +196,11 @@
 
   <div class="step"><div class="b">1</div><div>
     <h3>Instale a skill</h3>
-    <p>Clone o repositório e ligue a skill ao Claude Code. <code>S</code> e <code>T</code> só valem no terminal em que você as criou: num terminal novo, rode a terceira linha de novo.</p>
+    <p>Clone o repositório e ligue a skill ao Claude Code. <code>S</code> e <code>T</code> só valem no terminal em que você as criou: num terminal novo, rode a terceira linha de novo. Rode as linhas na pasta onde quer guardar o kit (o <code>ln -s</code> usa a pasta atual).</p>
 <pre><span class="k">git clone https://github.com/inematds/site-inspirado</span>
 <span class="k">mkdir -p ~/.claude/skills && ln -s "$PWD/site-inspirado/skill/site-inspirado" ~/.claude/skills/site-inspirado</span>
-<span class="k">S=~/.claude/skills/site-inspirado; T=~/meu-site; mkdir -p $T/refs</span></pre>
+<span class="k">S=~/.claude/skills/site-inspirado; T=~/meu-site; mkdir -p $T/refs</span>
+<span class="k">cd $S/scripts && npm install && npx playwright install chromium && cd -</span>  <span class="c"># navegador do portão</span></pre>
   </div></div>
 
   <div class="step"><div class="b">2</div><div>
@@ -220,7 +223,7 @@
 
   <div class="step"><div class="b">5</div><div>
     <h3>Gere as imagens no mesmo estilo</h3>
-    <p>Escreva <code>$T/plano.json</code> (uma linha por imagem: <code>nome</code>, <code>prompt</code> do assunto, <code>largura</code>, <code>altura</code>). Cada imagem leva as referências e a primeira imagem gerada como modelo (a "âncora"), para a série sair com a mesma mão. No fim sai a <code>folha.jpg</code>, uma folha com todas as imagens lado a lado: olhe e refaça o que destoar. Modelo pronto: <code>pilotos/padaria/plano.json</code>.</p>
+    <p>Escreva <code>$T/plano.json</code> (uma linha por imagem: <code>nome</code>, <code>prompt</code> do assunto, <code>largura</code>, <code>altura</code>). Cada imagem leva as referências e a primeira imagem gerada como modelo (a "âncora"), para a série sair com a mesma mão. No fim sai a <code>folha.jpg</code>, uma folha com todas as imagens lado a lado: olhe e refaça o que destoar. Não precisa escrever o JSON à mão: peça ao Claude Code "escreva o plano.json a partir do BRIEF" ou copie <code>pilotos/padaria/plano.json</code> e troque os textos. Cada imagem leva cerca de 1 minuto e usa a cota da sua assinatura do Codex.</p>
 <pre><span class="c"># plano.json: [{"nome": "hero", "prompt": "pães esfriando na mesa", "largura": 1536, "altura": 1024}, ...]</span>
 <span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs</span>
 <span class="k">python3 $S/scripts/imagens.py $T/plano.json $T/estilo.json $T/img --refs $T/refs --so croissant</span>  <span class="c"># refaz uma</span></pre>
@@ -238,19 +241,21 @@
 
   <div class="step"><div class="b">7</div><div>
     <h3>Passe no portão</h3>
-    <p>Abre a página em 1440×900 e 390×844, com e sem "reduzir movimento". Só publique com <code>PASSA</code>.</p>
+    <p>Abre a página em 1440×900 e 390×844, com e sem "reduzir movimento". Use o <code>--tipo</code> que está no BRIEF (<code>negocio</code> ou <code>visual</code>). Se sair <code>NÃO PASSA</code>, a lista diz o motivo: cole no Claude Code e peça a correção. Só publique com <code>PASSA</code>.</p>
 <pre><span class="k">node $S/scripts/portao.js $T/index.html --tipo negocio --fotos $T/fotos</span>
-<span class="c">#   desktop   CTA na 1ª tela: sim · CTAs: 3 · erros 0</span>
-<span class="c">#   celular   CTA na 1ª tela: sim · CTAs: 3 · erros 0</span>
+<span class="c"># portão visual × conversão — meu-site (negocio)</span>
+<span class="c">#   desktop          CTA na 1ª tela: sim · CTAs: 3 · peso 0.22 MB · erros 0</span>
+<span class="c">#   celular          CTA na 1ª tela: sim · CTAs: 3 · peso 0.55 MB · erros 0</span>
+<span class="c">#   desktop+reduzir  … · celular+reduzir  …</span>
 <span class="c"># PASSA</span></pre>
   </div></div>
 
   <div class="step"><div class="b">8</div><div>
     <h3>Publique</h3>
-    <p>A pasta <code>$T</code> já é um site estático completo. Suba para o GitHub e ligue o Pages (ou use a Vercel ou a hospedagem do cliente).</p>
+    <p>A pasta <code>$T</code> já é um site estático completo. Suba para o GitHub e ligue o GitHub Pages, a hospedagem grátis de páginas do GitHub (ou use a Vercel ou a hospedagem do cliente). Troque <code>SEU_USUARIO</code> pelo seu usuário do GitHub.</p>
 <pre><span class="k">cd $T && git init -b main && git add -A && git commit -m</span> <span class="s">"site"</span>
 <span class="k">gh repo create meu-site --public --source=. --push</span>
-<span class="k">gh api -X POST repos/&lt;usuario&gt;/meu-site/pages -f "source[branch]=main" -f "source[path]=/"</span></pre>
+<span class="k">gh api -X POST repos/SEU_USUARIO/meu-site/pages -f "source[branch]=main" -f "source[path]=/"</span></pre>
   </div></div>
 </div></section>
 
